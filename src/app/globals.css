@@ -1,70 +1,12 @@
-.satzung {
-  padding: 2rem;
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+
+body {
+  font-family: "Lora", serif;
+  font-weight: 400;
 }
 
-.satzung ol {
-  list-style: none;
-  counter-reset: item;
-}
-
-.satzung ol li {
-  counter-increment: item;
-}
-
-.satzung ol li::before {
-  content: counter(item) ") ";
-  font-weight: inherit;
-}
-
-/* Für äußere Liste: 1) */
-.satzung ol {
-  list-style: none;
-  counter-reset: item;
-}
-
-.satzung ol li {
-  counter-increment: item;
-}
-
-.satzung ol li::before {
-  content: counter(item) ") ";
-}
-
-/* Für innere Liste: a) */
-.satzung ol ol {
-  counter-reset: subitem;
-}
-
-.satzung ol ol li {
-  counter-increment: subitem;
-}
-
-.satzung ol ol li::before {
-  content: counter(subitem, lower-alpha) ") ";
-}
-
-#unterzeichnet {
-  display: flex;
-  gap: 2rem;
-}
-
-.boardMember {
-  margin-top: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.boardMember img {
-  width: 130px;
-  height: 130px;
-}
-
-.boardMember p {
-  margin: 0;
-  padding: 0;
-}
-
-#vorstandsliste {
-  list-style: none;
+strong,
+b,
+.bold {
+  font-weight: 700;
 }
