@@ -2,8 +2,8 @@ import { createClient, Entry, EntrySkeletonType } from "contentful";
 import { BoardMember } from "../types/contentful";
 
 const client = createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
+  space: process.env.CONTENTFUL_SPACE_ID!,
+  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN!,
 });
 
 export async function getBoardMembers(): Promise<BoardMember[]> {
