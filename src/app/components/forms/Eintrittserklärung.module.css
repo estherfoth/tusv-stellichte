@@ -1,0 +1,9 @@
+.headline {
+  display: flex;
+  width: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  line-height: 3rem;
+}

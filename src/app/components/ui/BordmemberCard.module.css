@@ -1,0 +1,16 @@
+.boardMember {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.boardMember img {
+  width: 130px;
+  height: 130px;
+}
+
+.boardMember p {
+  margin: 0;
+  padding: 0;
+}

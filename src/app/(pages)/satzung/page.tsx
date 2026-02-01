@@ -1,6 +1,8 @@
+import styles from "./page.module.css";
+
 export default function Satzung() {
   return (
-    <main className="satzung">
+    <main className={styles.satzung}>
       <h1>Satzung des Turn- und Spielverein Stellichte von 1910 e. V.</h1>
       <h2>I. Allgemeine Bestimmungen</h2>
       <section>

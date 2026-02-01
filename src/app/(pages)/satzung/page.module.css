@@ -1,0 +1,49 @@
+.satzung {
+  padding: 2rem;
+}
+
+.satzung ol {
+  list-style: none;
+  counter-reset: item;
+}
+
+.satzung ol li {
+  counter-increment: item;
+}
+
+.satzung ol li::before {
+  content: counter(item) ") ";
+  font-weight: inherit;
+}
+
+/* Für äußere Liste: 1) */
+.satzung ol {
+  list-style: none;
+  counter-reset: item;
+}
+
+.satzung ol li {
+  counter-increment: item;
+}
+
+.satzung ol li::before {
+  content: counter(item) ") ";
+}
+
+/* Für innere Liste: a) */
+.satzung ol ol {
+  counter-reset: subitem;
+}
+
+.satzung ol ol li {
+  counter-increment: subitem;
+}
+
+.satzung ol ol li::before {
+  content: counter(subitem, lower-alpha) ") ";
+}
+
+#unterzeichnet {
+  display: flex;
+  gap: 2rem;
+}
