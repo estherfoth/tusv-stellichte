@@ -1,42 +1,70 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.satzung {
+  padding: 2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.satzung ol {
+  list-style: none;
+  counter-reset: item;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.satzung ol li {
+  counter-increment: item;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.satzung ol li::before {
+  content: counter(item) ") ";
+  font-weight: inherit;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
+/* Für äußere Liste: 1) */
+.satzung ol {
+  list-style: none;
+  counter-reset: item;
+}
+
+.satzung ol li {
+  counter-increment: item;
+}
+
+.satzung ol li::before {
+  content: counter(item) ") ";
+}
+
+/* Für innere Liste: a) */
+.satzung ol ol {
+  counter-reset: subitem;
+}
+
+.satzung ol ol li {
+  counter-increment: subitem;
+}
+
+.satzung ol ol li::before {
+  content: counter(subitem, lower-alpha) ") ";
+}
+
+#unterzeichnet {
+  display: flex;
+  gap: 2rem;
+}
+
+.boardMember {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.boardMember img {
+  width: 130px;
+  height: 130px;
+}
+
+.boardMember p {
   margin: 0;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+#vorstandsliste {
+  list-style: none;
 }
