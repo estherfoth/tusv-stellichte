@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
+import Signatur from "./Signatur";
 import styles from "./Eintrittserklärung.module.css";
 
 export default function EintrittserklärungsFormular() {
@@ -27,7 +28,20 @@ export default function EintrittserklärungsFormular() {
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    setSignatureError(false);
+
     if (!memberSigRef.current || memberSigRef.current.isEmpty()) {
+      setSignatureError(true);
+      return;
+    }
+
+    const isMinor = Boolean(birthDate) && !isAdult;
+    const parent1Empty =
+      !parentSig1Ref.current || parentSig1Ref.current.isEmpty();
+    const parent2Empty =
+      !parentSig2Ref.current || parentSig2Ref.current.isEmpty();
+
+    if (isMinor && parent1Empty && parent2Empty) {
       setSignatureError(true);
       return;
     }
@@ -177,6 +191,7 @@ export default function EintrittserklärungsFormular() {
           name="geburtsdatum"
           type="date"
           lang="de-DE"
+          required
           value={birthDate}
           onChange={(e) => setBirthDate(e.target.value)}
         />
@@ -250,94 +265,43 @@ export default function EintrittserklärungsFormular() {
         </strong>{" "}
         habe ich gelesen und zur Kenntnis genommen.
       </p>
-      <fieldset className={styles.signatureField}>
-        <legend>Ort, Datum und Unterschrift (Mitglied)</legend>
-        <section className={styles.signaturePlaceDate}>
-          <label>
-            Ort
-            <input name="ort" type="text" required />
-          </label>
-
-          <label>
-            Datum
-            <input name="datum" type="date" required />
-          </label>
-        </section>
-
-        <SignatureCanvas
-          ref={memberSigRef}
-          canvasProps={{
-            width: 400,
-            height: 150,
-            className: styles.signatureWrapper,
-          }}
-        />
-      </fieldset>
+      <Signatur
+        ref={memberSigRef}
+        legend="Ort, Datum und Unterschrift (Mitglied)"
+        placeName="ort_mitglied"
+        dateName="datum_mitglied"
+        clearLabel="Unterschrift löschen"
+        onClear={() => memberSigRef.current?.clear()}
+      />
       {!isAdult && birthDate && (
-        <fieldset className={styles.signatureField}>
-          <legend>Gesetzliche Vertreter</legend>
-          <section className={styles.signaturePlaceDate}>
-            <label>
-              Ort
-              <input name="ort" type="text" required />
-            </label>
-
-            <label>
-              Datum
-              <input name="datum" type="date" required />
-            </label>
-          </section>
-          <section className={styles.minorSignatures}>
-            
-            <p>Unterschrift gesetzlicher Vertreter 1</p>
-            <SignatureCanvas
-              ref={parentSig1Ref}
-              canvasProps={{
-                width: 400,
-                height: 150,
-                className: styles.signatureWrapper,
-              }}
-            />
-
-            <p>Unterschrift gesetzlicher Vertreter 2</p>
-            <SignatureCanvas
-              ref={parentSig2Ref}
-              canvasProps={{
-                width: 400,
-                height: 150,
-                className: styles.signatureWrapper,
-              }}
-            />
-          </section>
-        </fieldset>
+        <section className={styles.minorSignatures}>
+          <Signatur
+            ref={parentSig1Ref}
+            legend="Gesetzliche Vertreter"
+            title="Unterschrift gesetzlicher Vertreter 1"
+            placeName="ort_vertreter_1"
+            dateName="datum_vertreter_1"
+            clearLabel="Vertreter 1 löschen"
+            onClear={() => parentSig1Ref.current?.clear()}
+          />
+          <Signatur
+            ref={parentSig2Ref}
+            legend="Gesetzliche Vertreter"
+            title="Unterschrift gesetzlicher Vertreter 2"
+            placeName="ort_vertreter_2"
+            dateName="datum_vertreter_2"
+            clearLabel="Vertreter 2 löschen"
+            onClear={() => parentSig2Ref.current?.clear()}
+          />
+        </section>
       )}
-      <div className={styles.signatureActions}>
-        <button type="button" onClick={() => memberSigRef.current?.clear()}>
-          Unterschrift löschen
-        </button>
-        {!isAdult && birthDate && (
-          <>
-            <button
-              type="button"
-              onClick={() => parentSig1Ref.current?.clear()}
-            >
-              Vertreter 1 löschen
-            </button>
-
-            <button
-              type="button"
-              onClick={() => parentSig2Ref.current?.clear()}
-            >
-              Vertreter 2 löschen
-            </button>
-          </>
-        )}
-      </div>
-      <button
-        type="submit"
-        disabled={signatureError}
-        className={styles.submitButton}
-      >
+      {signatureError && (
+        <p role="alert">
+          Bitte unterschreiben: Mitglied verpflichtend, bei Minderjährigen
+          mindestens ein gesetzlicher Vertreter.
+        </p>
+      )}
+      <button type="submit" className={styles.submitButton}>
         Eintritt beantragen
       </button>
     </form>
