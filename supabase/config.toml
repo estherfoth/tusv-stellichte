@@ -385,7 +385,7 @@ s3_secret_key = "env(S3_SECRET_KEY)"
 
 [functions.generate-membership-pdf]
 enabled = true
-verify_jwt = true
+verify_jwt = false  # Changed: Allow public access for membership form
 import_map = "./functions/generate-membership-pdf/deno.json"
 # Uncomment to specify a custom file path to the entrypoint.
 # Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx

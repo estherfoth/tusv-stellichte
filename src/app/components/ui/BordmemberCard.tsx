@@ -1,4 +1,4 @@
-import { BoardMember } from "../../../../types/contentful";
+import { BoardMember } from "../../../types/contentful";
 import styles from "./BordmemberCard.module.css";
 
 type Props = {

@@ -1,5 +1,5 @@
 import { getBoardMembers } from "../../../../lib/contentful";
-import { BoardMember } from "../../../../types/contentful";
+import { BoardMember } from "../../../types/contentful";
 import VorstandsmitgliedCard from "./BordmemberCard";
 import styles from "./Vorstandsliste.module.css";
 
