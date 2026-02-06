@@ -281,7 +281,7 @@ Deno.serve(async (req) => {
     drawText(payload.telefonnummer || "", 222, 466, 10);
 
     // E-Mail (after "E-Mail-Adresse:" - same line, further right)
-    drawText(payload.email || "", 383, 466, 10);
+    drawText(payload.email || "", 385, 466, 10);
 
     // Member Signature Section (bottom of page)
     // "Ort, Datum" and "Unterschrift" are side by side
@@ -293,10 +293,10 @@ Deno.serve(async (req) => {
         base64ToUint8Array(payload.signature_member),
       );
       firstPage.drawImage(memberSig, {
-        x: 250,
+        x: 265,
         y: 140,
-        width: 157,
-        height: 35,
+        width: 110,
+        height: 30,
       });
     }
 
@@ -311,10 +311,10 @@ Deno.serve(async (req) => {
           base64ToUint8Array(payload.signature_parent_1),
         );
         firstPage.drawImage(parent1Sig, {
-          x: 250,
+          x: 230,
           y: 105,
-          width: 120,
-          height: 35,
+          width: 110,
+          height: 30,
         });
       }
 
@@ -324,10 +324,10 @@ Deno.serve(async (req) => {
           base64ToUint8Array(payload.signature_parent_2),
         );
         firstPage.drawImage(parent2Sig, {
-          x: 430,
+          x: 370,
           y: 105,
-          width: 120,
-          height: 35,
+          width: 110,
+          height: 30,
         });
       }
     }

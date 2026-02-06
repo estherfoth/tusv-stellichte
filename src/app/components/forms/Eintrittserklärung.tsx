@@ -338,6 +338,7 @@ export default function EintrittserklärungsFormular() {
         legend="Ort, Datum und Unterschrift (Mitglied)"
         placeName="ort_mitglied"
         dateName="datum_mitglied"
+        required={!isAdult ? false : true}
         clearLabel="Unterschrift löschen"
         onClear={() => memberSigRef.current?.clear()}
       />
@@ -390,11 +391,7 @@ export default function EintrittserklärungsFormular() {
           <p>PDF wird generiert... Bitte warten.</p>
         </div>
       )}
-      <button
-        type="submit"
-        className={styles.submitButton}
-        disabled={loading}
-      >
+      <button type="submit" className={styles.submitButton} disabled={loading}>
         {loading ? "Wird generiert..." : "Eintritt beantragen"}
       </button>
     </form>

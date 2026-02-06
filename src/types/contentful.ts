@@ -15,3 +15,14 @@ export type BoardMember = {
     };
   };
 };
+
+export type ImpressumContent = {
+  sys: { id: string };
+  fields: {
+    kontaktTelefon: string;
+    kontaktEmail: string;
+    registereintragRegistergericht: string;
+    registereintragRegisternummer: string;
+    umsatzsteuerIdentifikationsnummer: string;
+  };
+};

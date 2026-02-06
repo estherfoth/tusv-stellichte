@@ -1,5 +1,6 @@
 import { createClient, Entry, EntrySkeletonType } from "contentful";
 import { BoardMember } from "../types/contentful";
+import { ImpressumContent } from "../types/contentful";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID!,
@@ -15,6 +16,18 @@ export async function getBoardMembers(): Promise<BoardMember[]> {
     sys: { id: entry.sys.id },
     fields: entry.fields as BoardMember["fields"],
   }));
+}
+
+export async function getImpressum(): Promise<ImpressumContent> {
+  const entries = await client.getEntries({
+    content_type: "impressum",
+    include: 2, // Fetches linked asses
+  });
+  const entry = entries.items[0];
+  return {
+    sys: { id: entry.sys.id },
+    fields: entry.fields as ImpressumContent["fields"],
+  };
 }
 
 export async function getArticles() {
