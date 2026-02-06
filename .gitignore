@@ -34,6 +34,10 @@ yarn-error.log*
 .env*
 !.env.example
 
+# supabase
+!.vscode/settings.json
+!supabase/functions/import_map.json
+
 
 # vercel
 .vercel

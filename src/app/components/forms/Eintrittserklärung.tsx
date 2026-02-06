@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import SignatureCanvas from "react-signature-canvas";
 import Signatur from "./Signatur";
 import styles from "./Eintrittserklärung.module.css";
+import { supabase } from "@/lib/supabase";
 
 export default function EintrittserklärungsFormular() {
   const memberSigRef = useRef<SignatureCanvas | null>(null);
@@ -12,6 +13,10 @@ export default function EintrittserklärungsFormular() {
 
   const [signatureError, setSignatureError] = useState(false);
   const [birthDate, setBirthDate] = useState<string>("");
+
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
 
   const isAdult = (() => {
     if (!birthDate) return false;
@@ -25,10 +30,10 @@ export default function EintrittserklärungsFormular() {
     return age >= 18;
   })();
 
-  function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
     setSignatureError(false);
+    setSubmitError(null);
 
     if (!memberSigRef.current || memberSigRef.current.isEmpty()) {
       setSignatureError(true);
@@ -46,33 +51,85 @@ export default function EintrittserklärungsFormular() {
       return;
     }
 
-    const memberSignature = memberSigRef.current
-      .getTrimmedCanvas()
-      .toDataURL("image/png");
-
-    const parentSignature1 =
-      parentSig1Ref.current && !parentSig1Ref.current.isEmpty()
-        ? parentSig1Ref.current.getTrimmedCanvas().toDataURL("image/png")
-        : null;
-
-    const parentSignature2 =
-      parentSig2Ref.current && !parentSig2Ref.current.isEmpty()
-        ? parentSig2Ref.current.getTrimmedCanvas().toDataURL("image/png")
-        : null;
+    setLoading(true);
 
     const formData = new FormData(e.currentTarget);
 
-    formData.append("signature_member", memberSignature);
+    const payload = {
+      // Personal data
+      geschlecht: String(formData.get("geschlecht") ?? ""),
+      vorname: String(formData.get("vorname") ?? ""),
+      nachname: String(formData.get("nachname") ?? ""),
+      strasse: String(formData.get("straße") ?? ""),
+      hausnummer: String(formData.get("hausnummer") ?? ""),
+      plz: String(formData.get("plz") ?? ""),
+      ort: String(formData.get("ort") ?? ""),
+      geburtsdatum: birthDate,
+      sparte: String(formData.get("sparte") ?? ""),
+      telefonnummer: String(formData.get("telefonnummer") ?? ""),
+      email: String(formData.get("email") ?? ""),
 
-    if (parentSignature1) {
-      formData.append("signature_parent_1", parentSignature1);
+      // Entry date
+      eintrittsdatum: String(formData.get("eintrittsdatum") ?? ""),
+
+      // Member signature
+      ort_mitglied: String(formData.get("ort_mitglied") ?? ""),
+      datum_mitglied: String(formData.get("datum_mitglied") ?? ""),
+      signature_member: memberSigRef
+        .current!.getTrimmedCanvas()
+        .toDataURL("image/png"),
+
+      // Parent/Guardian 1
+      ort_vertreter_1: String(formData.get("ort_vertreter_1") ?? ""),
+      datum_vertreter_1: String(formData.get("datum_vertreter_1") ?? ""),
+      signature_parent_1:
+        parentSig1Ref.current && !parentSig1Ref.current.isEmpty()
+          ? parentSig1Ref.current.getTrimmedCanvas().toDataURL("image/png")
+          : null,
+
+      // Parent/Guardian 2
+      ort_vertreter_2: String(formData.get("ort_vertreter_2") ?? ""),
+      datum_vertreter_2: String(formData.get("datum_vertreter_2") ?? ""),
+      signature_parent_2:
+        parentSig2Ref.current && !parentSig2Ref.current.isEmpty()
+          ? parentSig2Ref.current.getTrimmedCanvas().toDataURL("image/png")
+          : null,
+    };
+
+    const { data, error } = await supabase.functions.invoke(
+      "generate-membership-pdf",
+      {
+        body: payload, // <-- MUSS ein plain Object sein
+      },
+    );
+
+    setLoading(false);
+
+    if (error) {
+      console.error("Edge function error:", error);
+      setSubmitError(`Fehler beim Generieren der PDF: ${error.message}`);
+      return;
     }
 
-    if (parentSignature2) {
-      formData.append("signature_parent_2", parentSignature2);
-    }
+    if (data?.success && data?.url) {
+      console.log("PDF generated successfully:", data);
 
-    console.log(Object.fromEntries(formData.entries()));
+      // Open PDF in new tab
+      window.open(data.url, "_blank");
+
+      // Optional: Also trigger download
+      const link = document.createElement("a");
+      link.href = data.url;
+      link.download = data.filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      setSuccess(true);
+      setSubmitError(null);
+    } else {
+      setSubmitError("PDF wurde generiert, aber keine URL erhalten.");
+    }
   }
 
   return (
@@ -109,6 +166,7 @@ export default function EintrittserklärungsFormular() {
           id="männlichWahl"
           name="geschlecht"
           type="radio"
+          value="männlich"
         />
         <label className={styles.eintrittsRadioLabel} htmlFor="männlichWahl">
           männlich
@@ -118,6 +176,7 @@ export default function EintrittserklärungsFormular() {
           id="weiblichWahl"
           name="geschlecht"
           type="radio"
+          value="weiblich"
         />
         <label className={styles.eintrittsRadioLabel} htmlFor="weiblichWahl">
           weiblich
@@ -127,6 +186,7 @@ export default function EintrittserklärungsFormular() {
           id="diversWahl"
           name="geschlecht"
           type="radio"
+          value="divers"
         />
         <label className={styles.eintrittsRadioLabel} htmlFor="diversWahl">
           divers
@@ -139,6 +199,7 @@ export default function EintrittserklärungsFormular() {
           className={styles.eintrittsInput}
           name="vorname"
           type="text"
+          required
         ></input>
         <label className={styles.eintrittsLabel} htmlFor="nachname">
           Nachname
@@ -147,6 +208,7 @@ export default function EintrittserklärungsFormular() {
           className={styles.eintrittsInput}
           name="nachname"
           type="text"
+          required
         ></input>
         <br />
         <label className={styles.eintrittsLabel} htmlFor="straße">
@@ -160,12 +222,14 @@ export default function EintrittserklärungsFormular() {
           className={styles.eintrittsInput}
           name="straße"
           type="text"
+          required
         ></input>
         <span>, </span>
         <input
           className={styles.eintrittsInput}
           name="hausnummer"
           type="text"
+          required
         ></input>
         <br />
         <label className={styles.eintrittsLabel} htmlFor="plz">
@@ -179,6 +243,7 @@ export default function EintrittserklärungsFormular() {
           className={styles.eintrittsInput}
           name="plz"
           type="number"
+          required
         ></input>
         <span>, </span>
         <input className={styles.eintrittsInput} name="ort" type="text"></input>
@@ -202,6 +267,7 @@ export default function EintrittserklärungsFormular() {
           className={styles.eintrittsInput}
           name="sparte"
           type="text"
+          required
         ></input>
         <br />
         <label className={styles.eintrittsLabel} htmlFor="telefonnummer">
@@ -211,6 +277,7 @@ export default function EintrittserklärungsFormular() {
           className={styles.eintrittsInput}
           name="telefonnummer"
           type="phone"
+          required
         ></input>
         <label className={styles.eintrittsLabel} htmlFor="email">
           E-Mail
@@ -219,6 +286,7 @@ export default function EintrittserklärungsFormular() {
           className={styles.eintrittsInput}
           name="email"
           type="email"
+          required
         ></input>
       </fieldset>
       <p>
@@ -290,6 +358,7 @@ export default function EintrittserklärungsFormular() {
             title="Unterschrift gesetzlicher Vertreter 2"
             placeName="ort_vertreter_2"
             dateName="datum_vertreter_2"
+            required={false}
             clearLabel="Vertreter 2 löschen"
             onClear={() => parentSig2Ref.current?.clear()}
           />
@@ -301,8 +370,32 @@ export default function EintrittserklärungsFormular() {
           mindestens ein gesetzlicher Vertreter.
         </p>
       )}
-      <button type="submit" className={styles.submitButton}>
-        Eintritt beantragen
+      {submitError && (
+        <div role="alert" className={styles.errorMessage}>
+          <strong>Fehler beim Absenden</strong>
+          <p>{submitError}</p>
+        </div>
+      )}
+      {success && (
+        <div role="status" className={styles.successMessage}>
+          <strong>Erfolgreich!</strong>
+          <p>
+            Ihre Eintrittserklärung wurde erfolgreich generiert. Die PDF wurde
+            automatisch heruntergeladen und in einem neuen Tab geöffnet.
+          </p>
+        </div>
+      )}
+      {loading && (
+        <div className={styles.loadingOverlay}>
+          <p>PDF wird generiert... Bitte warten.</p>
+        </div>
+      )}
+      <button
+        type="submit"
+        className={styles.submitButton}
+        disabled={loading}
+      >
+        {loading ? "Wird generiert..." : "Eintritt beantragen"}
       </button>
     </form>
   );
