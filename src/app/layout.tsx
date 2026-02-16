@@ -1,21 +1,21 @@
 import "normalize.css";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
+import NavBar from "./components/layout/NavBar";
+import Footer from "./components/layout/Footer";
+import CookieFAB from "./components/ui/CookieFAB";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const manrope = Manrope({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
 });
 
 export const metadata: Metadata = {
-  title: "TuSV-Stellichte",
-  description: "Sportverein in Stellichte",
+  title: "TuSV Stellichte e.V.",
+  description:
+    "TuSV Stellichte e.V. – Sportverein mit Fußball, Tischtennis, Fitness und mehr. Mitmachen, trainieren, Gemeinschaft erleben.",
 };
 
 export default function RootLayout({
@@ -24,9 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="de">
+      <body className={manrope.className}>
+        <NavBar />
         {children}
+        <Footer />
+        <CookieFAB />
       </body>
     </html>
   );
