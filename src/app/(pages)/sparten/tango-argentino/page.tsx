@@ -1,67 +1,65 @@
 import Hero from "@/app/components/ui/Hero";
 import Link from "next/link";
 
-export default function YogaPage() {
+export default function TangoArgentinoPage() {
   return (
     <main>
       <Hero
         variant="page"
-        eyebrow="Kurse"
-        title="Yoga"
-        description="Atmung, Beweglichkeit und Entspannung im Einklang – für Körper und Geist."
+        eyebrow="Freizeit & Tanz"
+        title="Tango Argentino"
+        description="Tanz, Haltung und musikalisches Gefühl – Leidenschaft auf der Tanzfläche."
       />
 
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Yoga beim TuSV</h2>
+            <h2>Tango Argentino beim TuSV</h2>
             <p>
-              Unser Yoga-Kurs verbindet körperliche Übungen (Asanas) mit
-              Atemtechniken und Meditation. Ziel ist es, Körper und Geist in
-              Einklang zu bringen und gleichzeitig Kraft, Flexibilität und
-              Entspannung zu fördern.
+              Tango Argentino ist mehr als nur ein Tanz – er ist Ausdruck,
+              Improvisation und Verbindung. Bei uns lernen Sie die Grundlagen
+              und tauchen in die faszinierende Welt des Tangos ein.
             </p>
           </div>
 
           <div className="card-grid">
             <article className="card">
-              <h3>Körperliche Fitness</h3>
+              <h3>Technik & Haltung</h3>
               <p>
-                Yoga stärkt die Muskulatur, verbessert die Haltung und fördert
-                die Beweglichkeit.
+                Wir vermitteln die Grundlagen der Tanzhaltung, Führung und
+                Schrittfolgen des Tango Argentino.
               </p>
             </article>
             <article className="card">
-              <h3>Entspannung & Achtsamkeit</h3>
+              <h3>Musikalität & Improvisation</h3>
               <p>
-                Bewusste Atmung und Meditation helfen, Stress abzubauen und zur
-                Ruhe zu kommen.
+                Tango lebt von der Musik und der Improvisation – jeder Tanz ist
+                einzigartig.
               </p>
             </article>
             <article className="card">
-              <h3>Für alle Level</h3>
+              <h3>Verbindung & Ausdruck</h3>
               <p>
-                Anfänger und Fortgeschrittene sind gleichermaßen willkommen –
-                die Übungen werden individuell angepasst.
+                Im Tango geht es um die Verbindung zwischen den Tanzpartnern
+                und den Ausdruck von Emotionen.
               </p>
             </article>
           </div>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Was erwartet dich?</h2>
+            <h2>Für wen ist Tango geeignet?</h2>
           </div>
           <p>
-            In unseren Yoga-Stunden kombinieren wir verschiedene Yoga-Stile und
-            passen die Übungen an die Bedürfnisse der Gruppe an. Jede Einheit
-            beginnt mit einer kurzen Entspannung und endet mit einer
-            Schlussmeditation.
+            Tango Argentino ist für alle geeignet, die Freude am Tanzen und an
+            Musik haben. Vorkenntnisse sind nicht erforderlich – wir vermitteln
+            die Grundlagen Schritt für Schritt.
           </p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Kurszeiten</h2>
           </div>
           <p>
-            Die aktuellen Kurszeiten finden Sie auf unserer{" "}
+            Die aktuellen Kurszeiten finden Sie auf der{" "}
             <Link href="/trainingszeiten">Trainingszeiten-Seite</Link>.
           </p>
 
@@ -69,8 +67,8 @@ export default function YogaPage() {
             <h2>Interesse?</h2>
           </div>
           <p>
-            Schnupperstunden sind nach Absprache möglich.{" "}
-            <Link href="/kontakt">Kontaktieren Sie uns</Link> für weitere
+            Lust auf Tango? Schnupperstunden sind möglich –{" "}
+            <Link href="/kontakt">kontaktieren Sie uns</Link> für weitere
             Informationen.
           </p>
           <div className="hero-actions" style={{ marginTop: "24px" }}>

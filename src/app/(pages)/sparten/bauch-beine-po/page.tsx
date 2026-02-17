@@ -1,63 +1,62 @@
 import Hero from "@/app/components/ui/Hero";
 import Link from "next/link";
 
-export default function EnergyDancePage() {
+export default function BauchBeinePoPage() {
   return (
     <main>
       <Hero
         variant="page"
-        eyebrow="Kurse"
-        title="Energy Dance"
-        description="Power, Rhythmus und Spaß mit energiegeladenen Moves – tanzen und fit werden."
+        eyebrow="Fitness & Gymnastik"
+        title="Bauch-Beine-Po"
+        description="Gezieltes Training für die Körpermitte – straffe Muskeln und bessere Körperspannung."
       />
 
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Energy Dance beim TuSV</h2>
+            <h2>Bauch-Beine-Po beim TuSV</h2>
             <p>
-              Energy Dance ist ein dynamisches Tanzworkout, das Fitness und
-              Choreografie verbindet. Zu mitreißender Musik werden
-              Bewegungsabläufe einstudiert, die Ausdauer, Koordination und Spaß
-              miteinander vereinen.
+              Das BBP-Training konzentriert sich auf die klassischen
+              Problemzonen: Bauch, Beine und Po. Mit gezielten Übungen werden
+              diese Muskelgruppen gekräftigt und geformt.
             </p>
           </div>
 
           <div className="card-grid">
             <article className="card">
-              <h3>Cardio & Ausdauer</h3>
+              <h3>Gezielte Kräftigung</h3>
               <p>
-                Intensives Ausdauertraining zu energiegeladener Musik –
-                effektiv und motivierend.
+                Fokussierte Übungen für Bauch, Beine und Po – effektiv und
+                intensiv.
               </p>
             </article>
             <article className="card">
-              <h3>Choreografie & Rhythmus</h3>
+              <h3>Körperspannung</h3>
               <p>
-                Tanzschritte und Choreografien trainieren Koordination und
-                Rhythmusgefühl.
+                Training der Core-Muskulatur für bessere Haltung und mehr
+                Stabilität im Alltag.
               </p>
             </article>
             <article className="card">
-              <h3>Spaß & Gruppengefühl</h3>
+              <h3>Für jedes Level</h3>
               <p>
-                Gemeinsam tanzen macht Freude und sorgt für gute Laune und
-                Motivation.
+                Die Übungen können an verschiedene Fitnesslevel angepasst
+                werden – Einsteiger willkommen!
               </p>
             </article>
           </div>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Für wen ist Energy Dance geeignet?</h2>
+            <h2>Was wird trainiert?</h2>
           </div>
           <p>
-            Der Kurs richtet sich an alle, die Freude an Bewegung und Musik
-            haben. Tanzerfahrung ist nicht erforderlich – die Choreografien
-            werden Schritt für Schritt aufgebaut.
+            Neben Bauch, Beinen und Po wird auch die allgemeine Körperspannung
+            und Ausdauer verbessert. Das Training kombiniert verschiedene
+            Übungen mit und ohne Kleingeräte.
           </p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Kurszeiten</h2>
+            <h2>Trainingszeiten</h2>
           </div>
           <p>
             Die aktuellen Kurszeiten finden Sie auf der{" "}
@@ -68,13 +67,12 @@ export default function EnergyDancePage() {
             <h2>Mitmachen?</h2>
           </div>
           <p>
-            Probieren Sie es aus! Schnupperstunden sind möglich –{" "}
-            <Link href="/kontakt">kontaktieren Sie uns</Link> für weitere
-            Informationen.
+            Interesse am BBP-Training? Kommen Sie zu einer Probestunde oder{" "}
+            <Link href="/kontakt">kontaktieren Sie uns</Link>.
           </p>
           <div className="hero-actions" style={{ marginTop: "24px" }}>
             <Link href="/trainingszeiten" className="btn primary">
-              Kurszeiten ansehen
+              Trainingszeiten ansehen
             </Link>
             <Link href="/kontakt" className="btn ghost">
               Kontakt aufnehmen

@@ -1,25 +1,25 @@
 import Hero from "@/app/components/ui/Hero";
 import Link from "next/link";
 
-export default function EnergyDancePage() {
+export default function StepAerobicPage() {
   return (
     <main>
       <Hero
         variant="page"
-        eyebrow="Kurse"
-        title="Energy Dance"
-        description="Power, Rhythmus und Spaß mit energiegeladenen Moves – tanzen und fit werden."
+        eyebrow="Fitness & Gymnastik"
+        title="Step Aerobic"
+        description="Rhythmus, Ausdauer und Spaß in der Gruppe – Cardio-Training mit dem Step."
       />
 
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Energy Dance beim TuSV</h2>
+            <h2>Step Aerobic beim TuSV</h2>
             <p>
-              Energy Dance ist ein dynamisches Tanzworkout, das Fitness und
-              Choreografie verbindet. Zu mitreißender Musik werden
-              Bewegungsabläufe einstudiert, die Ausdauer, Koordination und Spaß
-              miteinander vereinen.
+              Step Aerobic ist ein dynamisches Ausdauertraining, das
+              Koordination, Fitness und Beweglichkeit fördert. Zu motivierender
+              Musik werden auf und ab dem Step vielfältige Schrittfolgen
+              trainiert.
             </p>
           </div>
 
@@ -27,37 +27,37 @@ export default function EnergyDancePage() {
             <article className="card">
               <h3>Cardio & Ausdauer</h3>
               <p>
-                Intensives Ausdauertraining zu energiegeladener Musik –
-                effektiv und motivierend.
+                Effektives Herz-Kreislauf-Training zur Steigerung der
+                Kondition und Fettverbrennung.
               </p>
             </article>
             <article className="card">
-              <h3>Choreografie & Rhythmus</h3>
+              <h3>Koordination</h3>
               <p>
-                Tanzschritte und Choreografien trainieren Koordination und
-                Rhythmusgefühl.
+                Die Schrittfolgen trainieren Koordination, Rhythmusgefühl und
+                Konzentration.
               </p>
             </article>
             <article className="card">
-              <h3>Spaß & Gruppengefühl</h3>
+              <h3>Spaß & Motivation</h3>
               <p>
-                Gemeinsam tanzen macht Freude und sorgt für gute Laune und
-                Motivation.
+                Energiegeladene Musik und Gruppenatmosphäre sorgen für Spaß und
+                Motivation beim Training.
               </p>
             </article>
           </div>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Für wen ist Energy Dance geeignet?</h2>
+            <h2>Für wen ist Step Aerobic geeignet?</h2>
           </div>
           <p>
-            Der Kurs richtet sich an alle, die Freude an Bewegung und Musik
-            haben. Tanzerfahrung ist nicht erforderlich – die Choreografien
-            werden Schritt für Schritt aufgebaut.
+            Step Aerobic ist für alle geeignet, die ihre Ausdauer verbessern
+            und dabei Spaß haben möchten. Die Intensität kann individuell
+            angepasst werden.
           </p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Kurszeiten</h2>
+            <h2>Trainingszeiten</h2>
           </div>
           <p>
             Die aktuellen Kurszeiten finden Sie auf der{" "}
@@ -68,13 +68,12 @@ export default function EnergyDancePage() {
             <h2>Mitmachen?</h2>
           </div>
           <p>
-            Probieren Sie es aus! Schnupperstunden sind möglich –{" "}
-            <Link href="/kontakt">kontaktieren Sie uns</Link> für weitere
-            Informationen.
+            Probieren Sie es aus! Schnupperstunden sind möglich – einfach
+            vorbeikommen oder <Link href="/kontakt">Kontakt aufnehmen</Link>.
           </p>
           <div className="hero-actions" style={{ marginTop: "24px" }}>
             <Link href="/trainingszeiten" className="btn primary">
-              Kurszeiten ansehen
+              Trainingszeiten ansehen
             </Link>
             <Link href="/kontakt" className="btn ghost">
               Kontakt aufnehmen

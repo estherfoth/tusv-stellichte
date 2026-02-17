@@ -1,67 +1,66 @@
 import Hero from "@/app/components/ui/Hero";
 import Link from "next/link";
+import Image from "next/image";
 
-export default function YogaPage() {
+export default function KinderturnenPage() {
   return (
     <main>
       <Hero
         variant="page"
-        eyebrow="Kurse"
-        title="Yoga"
-        description="Atmung, Beweglichkeit und Entspannung im Einklang – für Körper und Geist."
+        eyebrow="Kinder & Jugend"
+        title="Kinderturnen"
+        description="Turnen, Klettern und Koordination für Kinder – Bewegung und Spaß von Anfang an."
       />
 
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Yoga beim TuSV</h2>
+            <h2>Kinderturnen beim TuSV</h2>
             <p>
-              Unser Yoga-Kurs verbindet körperliche Übungen (Asanas) mit
-              Atemtechniken und Meditation. Ziel ist es, Körper und Geist in
-              Einklang zu bringen und gleichzeitig Kraft, Flexibilität und
-              Entspannung zu fördern.
+              Beim Kinderturnen entdecken die Kleinen spielerisch ihre
+              motorischen Fähigkeiten. Klettern, Balancieren, Springen und
+              Rollen – hier werden Bewegungsfreude und Koordination gefördert.
             </p>
           </div>
 
           <div className="card-grid">
             <article className="card">
-              <h3>Körperliche Fitness</h3>
+              <h3>Motorische Entwicklung</h3>
               <p>
-                Yoga stärkt die Muskulatur, verbessert die Haltung und fördert
-                die Beweglichkeit.
+                Vielfältige Bewegungsformen fördern Koordination,
+                Gleichgewicht und Körperwahrnehmung.
               </p>
             </article>
             <article className="card">
-              <h3>Entspannung & Achtsamkeit</h3>
+              <h3>Spielerisches Lernen</h3>
               <p>
-                Bewusste Atmung und Meditation helfen, Stress abzubauen und zur
-                Ruhe zu kommen.
+                Durch Spiele und Parcours werden Bewegungsabläufe gelernt und
+                gefestigt – mit viel Spaß.
               </p>
             </article>
             <article className="card">
-              <h3>Für alle Level</h3>
+              <h3>Soziales Miteinander</h3>
               <p>
-                Anfänger und Fortgeschrittene sind gleichermaßen willkommen –
-                die Übungen werden individuell angepasst.
+                In der Gruppe lernen Kinder Rücksichtnahme, Zusammenarbeit und
+                gegenseitige Unterstützung.
               </p>
             </article>
           </div>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Was erwartet dich?</h2>
+            <h2>Für welches Alter?</h2>
           </div>
           <p>
-            In unseren Yoga-Stunden kombinieren wir verschiedene Yoga-Stile und
-            passen die Übungen an die Bedürfnisse der Gruppe an. Jede Einheit
-            beginnt mit einer kurzen Entspannung und endet mit einer
-            Schlussmeditation.
+            Unser Kinderturnen richtet sich an Kinder verschiedener
+            Altersgruppen. Die Übungen werden altersgerecht angepasst, sodass
+            jedes Kind gefördert wird.
           </p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Kurszeiten</h2>
+            <h2>Trainingszeiten</h2>
           </div>
           <p>
-            Die aktuellen Kurszeiten finden Sie auf unserer{" "}
+            Die aktuellen Zeiten für Kinderturnen finden Sie auf der{" "}
             <Link href="/trainingszeiten">Trainingszeiten-Seite</Link>.
           </p>
 
@@ -69,13 +68,13 @@ export default function YogaPage() {
             <h2>Interesse?</h2>
           </div>
           <p>
-            Schnupperstunden sind nach Absprache möglich.{" "}
+            Ihr Kind möchte mitmachen? Schnupperstunden sind jederzeit möglich.{" "}
             <Link href="/kontakt">Kontaktieren Sie uns</Link> für weitere
             Informationen.
           </p>
           <div className="hero-actions" style={{ marginTop: "24px" }}>
             <Link href="/trainingszeiten" className="btn primary">
-              Kurszeiten ansehen
+              Trainingszeiten ansehen
             </Link>
             <Link href="/kontakt" className="btn ghost">
               Kontakt aufnehmen

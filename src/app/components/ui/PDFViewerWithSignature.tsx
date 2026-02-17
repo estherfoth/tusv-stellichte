@@ -65,7 +65,7 @@ export default function PDFViewerWithSignature({
 
       // PDF speichern und herunterladen
       const signedPdfBytes = await pdfDoc.save();
-      const blob = new Blob([signedPdfBytes], { type: "application/pdf" });
+      const blob = new Blob([new Uint8Array(signedPdfBytes)], { type: "application/pdf" });
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.href = url;
