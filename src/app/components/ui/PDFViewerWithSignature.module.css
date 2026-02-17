@@ -1,0 +1,97 @@
+.pdfViewer {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.pdfViewerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.pdfViewerHeader h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.pdfDocument {
+  border: 1px solid rgba(15, 24, 36, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f9f9f9;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.pdfPage {
+  margin: 0 auto;
+  display: block;
+}
+
+.pdfPage canvas {
+  max-width: 100%;
+  height: auto !important;
+  display: block;
+}
+
+.signatureSection {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 2px dashed rgba(11, 60, 135, 0.2);
+}
+
+.signatureSection h4 {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+}
+
+.signatureCanvas {
+  background: #ffffff;
+  border: 2px solid rgba(11, 60, 135, 0.2);
+  border-radius: 12px;
+  padding: 12px;
+  display: inline-block;
+}
+
+.signatureWrapper {
+  border: 1px dashed rgba(11, 60, 135, 0.3);
+  border-radius: 8px;
+  cursor: crosshair;
+  display: block;
+}
+
+.signatureActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .pdfViewerHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .signatureCanvas {
+    width: 100%;
+  }
+
+  .signatureWrapper {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .signatureActions {
+    flex-direction: column;
+  }
+
+  .signatureActions button {
+    width: 100%;
+  }
+}

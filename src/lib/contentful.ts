@@ -1,6 +1,5 @@
 import { createClient, Entry, EntrySkeletonType } from "contentful";
-import { BoardMember } from "../types/contentful";
-import { ImpressumContent } from "../types/contentful";
+import { BoardMember, ImpressumContent, NewsArticle } from "../types/contentful";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID!,
@@ -33,4 +32,35 @@ export async function getImpressum(): Promise<ImpressumContent> {
 export async function getArticles() {
   const entries = await client.getEntries({ content_type: "article" });
   return entries.items;
+}
+
+export async function getNews(): Promise<NewsArticle[]> {
+  const entries = await client.getEntries({
+    content_type: "newsArticle",
+    include: 2, // Fetches linked assets (images)
+    order: ["-fields.date"], // Neueste zuerst
+  });
+  return entries.items.map((entry) => ({
+    sys: { id: entry.sys.id },
+    fields: entry.fields as NewsArticle["fields"],
+  }));
+}
+
+export async function getNewsBySlug(slug: string): Promise<NewsArticle | null> {
+  const entries = await client.getEntries({
+    content_type: "newsArticle",
+    "fields.slug": slug,
+    include: 2,
+    limit: 1,
+  });
+
+  if (entries.items.length === 0) {
+    return null;
+  }
+
+  const entry = entries.items[0];
+  return {
+    sys: { id: entry.sys.id },
+    fields: entry.fields as NewsArticle["fields"],
+  };
 }

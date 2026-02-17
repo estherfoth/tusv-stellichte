@@ -26,3 +26,29 @@ export type ImpressumContent = {
     umsatzsteuerIdentifikationsnummer: string;
   };
 };
+
+export type NewsArticle = {
+  sys: { id: string };
+  fields: {
+    title: string;
+    date: string;
+    excerpt: string;
+    content: string;
+    slug: string;
+    images?: {
+      sys: { id: string };
+      fields: {
+        title: string;
+        file: {
+          url: string;
+          details?: {
+            image?: {
+              width: number;
+              height: number;
+            };
+          };
+        };
+      };
+    }[];
+  };
+};
