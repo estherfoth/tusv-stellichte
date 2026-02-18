@@ -4,22 +4,22 @@
 export const sponsors = [
   {
     name: "Sponsor Platzhalter 1",
-    logo: "/images/Logo.png",
+    logo: "/images/Logo_TuSV.svg",
   },
   {
     name: "Sponsor Platzhalter 2",
-    logo: "/images/Logo.png",
+    logo: "/images/Logo_TuSV.svg",
   },
   {
     name: "Sponsor Platzhalter 3",
-    logo: "/images/Logo.png",
+    logo: "/images/Logo_TuSV.svg",
   },
   {
     name: "Sponsor Platzhalter 4",
-    logo: "/images/Logo.png",
+    logo: "/images/Logo_TuSV.svg",
   },
   {
     name: "Sponsor Platzhalter 5",
-    logo: "/images/Logo.png",
+    logo: "/images/Logo_TuSV.svg",
   },
 ];

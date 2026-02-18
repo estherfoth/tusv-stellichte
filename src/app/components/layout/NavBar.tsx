@@ -22,7 +22,7 @@ export default function NavBar() {
       <div className="container nav-wrap">
         <Link href="/" className="brand">
           <Image
-            src="/images/Logo.png"
+            src="/images/Logo_TuSV.svg"
             alt="TuSV Stellichte Logo"
             width={78}
             height={78}
@@ -40,16 +40,25 @@ export default function NavBar() {
           Menü
         </button>
         <nav id="site-nav" className={`site-nav ${isOpen ? "open" : ""}`}>
-          <Link href="/angebot" className={isActive("/angebot") ? "active" : ""}>
+          <Link
+            href="/angebot"
+            className={isActive("/angebot") ? "active" : ""}
+          >
             Angebote
           </Link>
           <Link href="/verein" className={isActive("/verein") ? "active" : ""}>
             Vereinsmitglieder
           </Link>
-          <Link href="/satzung" className={isActive("/satzung") ? "active" : ""}>
+          <Link
+            href="/satzung"
+            className={isActive("/satzung") ? "active" : ""}
+          >
             Verein
           </Link>
-          <Link href="/mitglied" className={isActive("/mitglied") ? "active" : ""}>
+          <Link
+            href="/mitglied"
+            className={isActive("/mitglied") ? "active" : ""}
+          >
             Mitglied werden
           </Link>
           <Link href="/news" className={isActive("/news") ? "active" : ""}>
