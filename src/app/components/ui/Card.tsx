@@ -34,6 +34,8 @@ export default function Card({
   button,
   children,
 }: CardProps) {
+  const isWrappedInLink = link && !button;
+
   const cardContent = (
     <div
       className={`card ${variant === "course" ? "card--course" : ""} ${
@@ -59,24 +61,21 @@ export default function Card({
         </Link>
       )}
       {link && !button && (
-        <a
-          href={link.href}
-          className={link.external ? "card-external" : "card-cta"}
-          {...(link.external && { target: "_blank", rel: "noreferrer" })}
-        >
+        <span className={link.external ? "card-external" : "card-cta"}>
           {link.text || "Mehr erfahren →"}
-        </a>
+        </span>
       )}
     </div>
   );
 
-  if (link && !button) {
+  if (isWrappedInLink) {
     return (
       <Link
         href={link.href}
         className={`card-link ${
           variant === "kinderturnen" ? "card-link--kinderturnen" : ""
         }`}
+        {...(link.external && { target: "_blank", rel: "noreferrer" })}
       >
         {cardContent}
       </Link>
