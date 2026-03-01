@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="title2 desc2">
+  <title id="title2">Event Sponsor Platzhalter 2</title>
+  <desc id="desc2">Gruenes Platzhalterlogo fuer eventbezogene Sponsoren.</desc>
+  <rect width="320" height="320" rx="24" fill="#edf9f2"/>
+  <rect x="32" y="32" width="256" height="256" rx="18" fill="#2bb673" opacity="0.18"/>
+  <path d="M76 190h168l-84-98z" fill="#1d8f58"/>
+  <rect x="92" y="208" width="136" height="14" rx="7" fill="#1d8f58"/>
+</svg>

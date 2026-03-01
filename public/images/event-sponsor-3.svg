@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="title3 desc3">
+  <title id="title3">Event Sponsor Platzhalter 3</title>
+  <desc id="desc3">Oranges Platzhalterlogo fuer eventbezogene Sponsoren.</desc>
+  <rect width="320" height="320" rx="24" fill="#fff4e8"/>
+  <rect x="32" y="32" width="256" height="256" rx="18" fill="#f28c28" opacity="0.2"/>
+  <rect x="88" y="88" width="144" height="52" rx="12" fill="#c96a14"/>
+  <rect x="88" y="154" width="144" height="18" rx="9" fill="#c96a14"/>
+  <rect x="88" y="184" width="104" height="18" rx="9" fill="#f28c28"/>
+</svg>
