@@ -4,7 +4,6 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/layout/NavBar";
 import Footer from "./components/layout/Footer";
-import CookieFAB from "./components/ui/CookieFAB";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -29,7 +28,6 @@ export default function RootLayout({
         <NavBar />
         {children}
         <Footer />
-        <CookieFAB />
       </body>
     </html>
   );
