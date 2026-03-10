@@ -36,7 +36,10 @@ export default function AngebotPage() {
               variant="course"
               title="Energy Dance"
               description="Power, Rhythmus und Spaß mit energiegeladenen Moves."
-              image={{ src: "/images/step_aerobic.png", alt: "Energy Dance Kurs" }}
+              image={{
+                src: "/images/step_aerobic.png",
+                alt: "Energy Dance Kurs",
+              }}
               link={{ href: "/kurse/energy-dance", text: "Mehr erfahren" }}
             />
             <Card
@@ -89,20 +92,32 @@ export default function AngebotPage() {
             <Card
               title="Damengymnastik"
               description="Beweglichkeit, Kräftigung und gemeinsames Training."
-              image={{ src: "/images/damengymnastik.png", alt: "Damengymnastik" }}
+              image={{
+                src: "/images/damengymnastik.png",
+                alt: "Damengymnastik",
+              }}
               link={{ href: "/sparten/damengymnastik", text: "Mehr erfahren" }}
             />
             <Card
               title="Herrengymnastik"
               description="Fitness, Stabilität und Ausgleich im Alltag."
-              image={{ src: "/images/herrengymnastik.png", alt: "Herrengymnastik" }}
+              image={{
+                src: "/images/herrengymnastik.png",
+                alt: "Herrengymnastik",
+              }}
               link={{ href: "/sparten/herrengymnastik", text: "Mehr erfahren" }}
             />
             <Card
               title="Seniorengymnastik"
               description="Sanfte Übungen für Mobilität und Wohlbefinden."
-              image={{ src: "/images/seniorengymnastik.png", alt: "Seniorengymnastik" }}
-              link={{ href: "/sparten/seniorengymnastik", text: "Mehr erfahren" }}
+              image={{
+                src: "/images/seniorengymnastik.png",
+                alt: "Seniorengymnastik",
+              }}
+              link={{
+                href: "/sparten/seniorengymnastik",
+                text: "Mehr erfahren",
+              }}
             />
             <Card
               title="Step Aerobic"
@@ -113,7 +128,10 @@ export default function AngebotPage() {
             <Card
               title="Bauch-Beine-Po"
               description="Gezieltes Training für die Körpermitte."
-              image={{ src: "/images/bauch-beine-po.png", alt: "Bauch-Beine-Po" }}
+              image={{
+                src: "/images/bauch-beine-po.png",
+                alt: "Bauch-Beine-Po",
+              }}
               link={{ href: "/sparten/bauch-beine-po", text: "Mehr erfahren" }}
             />
           </div>
@@ -124,14 +142,12 @@ export default function AngebotPage() {
             <p>Bewegung und Spaß von Anfang an.</p>
           </div>
           <div className="card-grid card-grid--compact card-grid--outdoor">
-            <Link href="/sparten/kinderturnen" className="card-link card-link--narrow card-link--kinderturnen">
-              <div className="card card--kinderturnen">
-                <img className="card-image" src="/images/kinderturnen.png" alt="Kinderturnen" />
-                <h3>Kinderturnen</h3>
-                <p>Turnen, Klettern und Koordination für Kinder.</p>
-                <span className="card-cta">Mehr erfahren</span>
-              </div>
-            </Link>
+            <Card
+              title="Kinderturnen"
+              description="Turnen, Klettern und Koordination für Kinder."
+              image={{ src: "/images/kinderturnen.png", alt: "Kinderturnen" }}
+              link={{ href: "/sparten/kinderturnen", text: "Mehr erfahren" }}
+            />
           </div>
 
           {/* Ausdauer & Outdoor */}
@@ -140,22 +156,18 @@ export default function AngebotPage() {
             <p>Unterwegs in der Region und an der frischen Luft.</p>
           </div>
           <div className="card-grid card-grid--compact card-grid--outdoor">
-            <Link href="/sparten/laufgruppe" className="card-link card-link--narrow card-link--half">
-              <div className="card">
-                <img className="card-image" src="/images/laufgruppe.png" alt="Laufgruppe" />
-                <h3>Laufgruppe</h3>
-                <p>Gemeinsam laufen, neue Strecken entdecken.</p>
-                <span className="card-cta">Mehr erfahren</span>
-              </div>
-            </Link>
-            <Link href="/sparten/radfahren" className="card-link card-link--narrow card-link--shift-left card-link--half">
-              <div className="card">
-                <img className="card-image" src="/images/radfahren.png" alt="Radfahren" />
-                <h3>Radfahren</h3>
-                <p>Gemeinsam radeln und die Umgebung erkunden.</p>
-                <span className="card-cta">Mehr erfahren</span>
-              </div>
-            </Link>
+            <Card
+              title="Laufgruppe"
+              description="Gemeinsam laufen, neue Strecken entdecken."
+              image={{ src: "/images/laufgruppe.png", alt: "Laufgruppe" }}
+              link={{ href: "/sparten/laufgruppe", text: "Mehr erfahren" }}
+            />
+            <Card
+              title="Radfahren"
+              description="Gemeinsam radeln und die Umgebung erkunden."
+              image={{ src: "/images/radfahren.png", alt: "Radfahren" }}
+              link={{ href: "/sparten/radfahren", text: "Mehr erfahren" }}
+            />
           </div>
 
           {/* Freizeit & Tanz */}
@@ -164,22 +176,18 @@ export default function AngebotPage() {
             <p>Bewegung, Rhythmus und Geselligkeit.</p>
           </div>
           <div className="card-grid card-grid--compact card-grid--outdoor">
-            <Link href="/sparten/boule" className="card-link card-link--narrow card-link--half">
-              <div className="card">
-                <img className="card-image" src="/images/boule.png" alt="Boule" />
-                <h3>Boule</h3>
-                <p>Entspanntes Spiel unter freiem Himmel.</p>
-                <span className="card-cta">Mehr erfahren</span>
-              </div>
-            </Link>
-            <Link href="/sparten/tango-argentino" className="card-link card-link--narrow card-link--half">
-              <div className="card">
-                <img className="card-image" src="/images/tango.webp" alt="Tango Argentino" />
-                <h3>Tango Argentino</h3>
-                <p>Tanz, Haltung und musikalisches Gefühl.</p>
-                <span className="card-cta">Mehr erfahren</span>
-              </div>
-            </Link>
+            <Card
+              title="Boule"
+              description="Entspanntes Spiel unter freiem Himmel."
+              image={{ src: "/images/boule.png", alt: "Boule" }}
+              link={{ href: "/sparten/boule", text: "Mehr erfahren" }}
+            />
+            <Card
+              title="Tango Argentino"
+              description="Tanz, Haltung und musikalisches Gefühl."
+              image={{ src: "/images/tango.webp", alt: "Tango" }}
+              link={{ href: "/sparten/tango-argentino", text: "Mehr erfahren" }}
+            />
           </div>
 
           {/* Vereinsservice */}
