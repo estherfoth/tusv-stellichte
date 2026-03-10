@@ -8,7 +8,7 @@ export default function RegistrierungPage() {
         variant="page"
         eyebrow="Anmeldung"
         title="Straßenlauf Registrierung"
-        description="Melden Sie sich jetzt für den Stellichter Straßenlauf 2026 an."
+        description="Melden Sie sich jetzt für den Stellichter Straßenlauf 2025 an."
       />
 
       <section className="section">
@@ -27,33 +27,72 @@ export default function RegistrierungPage() {
               <input type="text" name="name" autoComplete="name" required />
             </label>
             <label>
-              Geburtsjahr *
-              <input
-                type="number"
-                name="birthyear"
-                min="1900"
-                max="2026"
-                required
-              />
+              Straße, Nr.
+              <input type="text" name="street" autoComplete="street-address" />
             </label>
             <label>
-              E-Mail *
-              <input type="email" name="email" autoComplete="email" required />
+              Postleitzahl
+              <input type="text" name="postalCode" autoComplete="postal-code" />
             </label>
             <label>
-              Distanz *
-              <select name="distance" required>
-                <option value="">Bitte wählen</option>
-                <option value="kids">Kinderlauf (1 km)</option>
-                <option value="5km">5 km</option>
-                <option value="10km">10 km (Hauptstrecke)</option>
+              Wohnort *
+              <input type="text" name="city" autoComplete="address-level2" required />
+            </label>
+            <label>
+              Geschlecht *
+              <select name="gender" required defaultValue="">
+                <option value="">-</option>
+                <option value="weiblich">Weiblich</option>
+                <option value="maennlich">Männlich</option>
+                <option value="divers">Divers</option>
               </select>
             </label>
             <label>
-              Verein / Team (optional)
-              <input type="text" name="team" />
+              Jahrgang *
+              <input type="number" name="birthyear" min="1900" max="2025" required />
             </label>
-            <label className="checkbox-label">
+            <label>
+              Verein
+              <input type="text" name="team" autoComplete="organization" />
+            </label>
+            <label>
+              Ihre E-Mail-Adresse
+              <input type="email" name="email" autoComplete="email" required />
+            </label>
+            <label>
+              Telefon
+              <input type="tel" name="phone" autoComplete="tel" />
+            </label>
+            <label>
+              Gewünschte Laufstrecke *
+              <select name="distance" required defaultValue="">
+                <option value="">-</option>
+                <option value="walk-5km">1. Walken (ohne Zeitnahme) - 10:00 Uhr - 5,0 km</option>
+                <option value="kinder-2020-juenger">
+                  2. Laufen - Kinder Jg. 2020 u. jünger - 10:10 Uhr - 0,4 km
+                </option>
+                <option value="kinder-2016-2019">
+                  3. Laufen - Kinder Jg. 2016 bis 2019 - 10:20 Uhr - 1,2 km
+                </option>
+                <option value="kinder-2012-2015">
+                  4. Laufen - Kinder Jg. 2012 bis 2015 - 10:25 Uhr - 2,0 km
+                </option>
+                <option value="erwachsene-35km">
+                  5. Laufen - Erwachsene - 11:00 Uhr - 3,5 km
+                </option>
+                <option value="erwachsene-50km">
+                  6. Laufen - Erwachsene - 11:00 Uhr - 5,0 km
+                </option>
+                <option value="erwachsene-100km">
+                  7. Laufen - Erwachsene - 11:00 Uhr - 10,0 km
+                </option>
+              </select>
+            </label>
+            <label>
+              Nachricht
+              <textarea name="message" rows={8} />
+            </label>
+            <label className="consent">
               <input type="checkbox" name="privacy" required />
               Ich akzeptiere die{" "}
               <Link href="/datenschutz">Datenschutzerklärung</Link> *

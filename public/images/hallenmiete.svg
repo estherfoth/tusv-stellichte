@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Sporthalle</title>
+  <desc id="desc">Illustration einer Sporthalle als Platzhalterbild fuer Hallenmiete.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#dfeafb"/>
+      <stop offset="100%" stop-color="#f6f9ff"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dfb57a"/>
+      <stop offset="100%" stop-color="#c98d4b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect x="90" y="90" width="1020" height="700" rx="32" fill="#ffffff" stroke="#0b3c87" stroke-opacity="0.12" stroke-width="8"/>
+  <rect x="130" y="130" width="940" height="160" rx="24" fill="#dbe6f7"/>
+  <rect x="170" y="160" width="120" height="90" rx="14" fill="#b8cae6"/>
+  <rect x="320" y="160" width="120" height="90" rx="14" fill="#b8cae6"/>
+  <rect x="470" y="160" width="120" height="90" rx="14" fill="#b8cae6"/>
+  <rect x="620" y="160" width="120" height="90" rx="14" fill="#b8cae6"/>
+  <rect x="770" y="160" width="120" height="90" rx="14" fill="#b8cae6"/>
+  <rect x="920" y="160" width="110" height="90" rx="14" fill="#b8cae6"/>
+  <rect x="140" y="290" width="920" height="420" fill="url(#floor)"/>
+  <line x1="600" y1="290" x2="600" y2="710" stroke="#fff7ea" stroke-width="9"/>
+  <circle cx="600" cy="500" r="92" fill="none" stroke="#fff7ea" stroke-width="9"/>
+  <path d="M140 400h170c88 0 150-72 150-160" fill="none" stroke="#fff7ea" stroke-width="9"/>
+  <path d="M1060 400H890c-88 0-150-72-150-160" fill="none" stroke="#fff7ea" stroke-width="9"/>
+  <path d="M140 600h170c88 0 150 72 150 160" fill="none" stroke="#fff7ea" stroke-width="9"/>
+  <path d="M1060 600H890c-88 0-150 72-150 160" fill="none" stroke="#fff7ea" stroke-width="9"/>
+  <rect x="210" y="315" width="34" height="120" rx="10" fill="#d64545"/>
+  <rect x="956" y="315" width="34" height="120" rx="10" fill="#d64545"/>
+  <rect x="178" y="430" width="98" height="12" rx="6" fill="#d64545"/>
+  <rect x="924" y="430" width="98" height="12" rx="6" fill="#d64545"/>
+  <rect x="120" y="710" width="960" height="44" fill="#cdd8e4"/>
+  <rect x="160" y="728" width="880" height="16" rx="8" fill="#b9c7d6"/>
+  <rect x="210" y="112" width="320" height="62" rx="18" fill="#ffffff" stroke="#0b3c87" stroke-opacity="0.08" stroke-width="4"/>
+  <text x="370" y="152" text-anchor="middle" fill="#0b3c87" font-family="Arial, sans-serif" font-size="34" font-weight="700">Sporthalle</text>
+</svg>

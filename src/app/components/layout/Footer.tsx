@@ -29,6 +29,13 @@ export default function Footer() {
         <div>
           <h4>Weitere Links</h4>
           <a
+            href="https://www.heim-dr-kruse.de/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Heim Dr. Kruse
+          </a>
+          <a
             href="https://www.facebook.com/people/TuSV-Stellichte/100057358903767/"
             target="_blank"
             rel="noreferrer"
