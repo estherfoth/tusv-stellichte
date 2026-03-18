@@ -194,10 +194,10 @@ export default function Home() {
           </div>
           <div className="section-head" style={{ marginTop: "24px" }}>
             <h3>Eventbezogene Sponsoren</h3>
-            <p>Diese Partner unterstützen gezielt den Straßenlauf 2026.</p>
+            <p>Diese Partner unterstützen gezielt den Straßenlauf 2025.</p>
           </div>
           <SponsorGrid sponsors={strassenlaufEventSponsors} />
-          <form className="contact-form race-form race-form--spaced" action="#" method="post">
+          <form className="contact-form race-form" action="#" method="post">
             <label>
               Vor- und Nachname *
               <input type="text" name="name" autoComplete="name" required />

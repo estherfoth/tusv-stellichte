@@ -34,7 +34,7 @@ export default function Kontaktformular({
           </label>
           <label>
             Anliegen *
-            <select name="topic" required defaultValue={initialTopic}>
+            <select name="topic" required defaultValue="">
               <option value="">Bitte auswählen</option>
               <option value="allgemein">Allgemeine Anfrage</option>
               <option value="mitgliedschaft">Mitgliedschaft</option>

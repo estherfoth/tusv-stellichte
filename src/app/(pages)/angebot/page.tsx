@@ -200,10 +200,7 @@ export default function AngebotPage() {
               title="Halle mieten"
               description="Sie möchten unsere Halle für Training, Sportgruppen oder ein Event anfragen? Stellen Sie Ihre Anfrage direkt über das Kontaktformular."
               image={{ src: "/images/hallenmiete.svg", alt: "Halle mieten" }}
-              link={{
-                href: "/kontakt?topic=hallenmiete#kontaktformular",
-                text: "Jetzt anfragen",
-              }}
+              link={{ href: "/kontakt#kontaktformular", text: "Jetzt anfragen" }}
             />
           </div>
         </div>
