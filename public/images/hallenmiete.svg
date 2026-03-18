@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Hallenmiete Platzhalter</title>
+  <desc id="desc">Illustration einer Sporthalle als Platzhalterbild fuer Hallenmiete.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e8f0ff"/>
+      <stop offset="100%" stop-color="#d8e8ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect x="120" y="140" width="960" height="620" rx="26" fill="#ffffff" stroke="#0b3c87" stroke-opacity="0.2" stroke-width="8"/>
+  <rect x="180" y="220" width="840" height="380" rx="18" fill="#f9fbff" stroke="#2f66d7" stroke-opacity="0.18" stroke-width="6"/>
+  <rect x="180" y="620" width="840" height="80" rx="12" fill="#0b3c87" opacity="0.1"/>
+  <line x1="600" y1="220" x2="600" y2="600" stroke="#2f66d7" stroke-opacity="0.3" stroke-width="6"/>
+  <circle cx="600" cy="410" r="70" fill="none" stroke="#2f66d7" stroke-opacity="0.3" stroke-width="6"/>
+  <text x="600" y="660" text-anchor="middle" fill="#0b3c87" font-family="Arial, sans-serif" font-size="54" font-weight="700">HALLE MIETEN</text>
+</svg>

@@ -189,6 +189,20 @@ export default function AngebotPage() {
               link={{ href: "/sparten/tango-argentino", text: "Mehr erfahren" }}
             />
           </div>
+
+          {/* Vereinsservice */}
+          <div className="subsection-head">
+            <h3>Vereinsservice</h3>
+            <p>Zusätzliche Angebote rund um unsere Sportanlagen.</p>
+          </div>
+          <div className="card-grid">
+            <Card
+              title="Halle mieten"
+              description="Sie möchten unsere Halle für Training, Sportgruppen oder ein Event anfragen? Stellen Sie Ihre Anfrage direkt über das Kontaktformular."
+              image={{ src: "/images/hallenmiete.svg", alt: "Halle mieten" }}
+              link={{ href: "/kontakt#kontaktformular", text: "Jetzt anfragen" }}
+            />
+          </div>
         </div>
       </section>
     </main>
