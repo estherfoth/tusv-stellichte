@@ -1,4 +1,10 @@
-export default function Kontaktformular() {
+type KontaktformularProps = {
+  initialTopic?: string;
+};
+
+export default function Kontaktformular({
+  initialTopic = "",
+}: KontaktformularProps) {
   return (
     <section className="section" id="kontaktformular">
       <div className="container">
