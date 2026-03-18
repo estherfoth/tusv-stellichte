@@ -47,13 +47,13 @@ export default function NavBar() {
             Angebote
           </Link>
           <Link href="/verein" className={isActive("/verein") ? "active" : ""}>
-            Vereinsmitglieder
+            Vorstandsmitglieder
           </Link>
           <Link
             href="/satzung"
             className={isActive("/satzung") ? "active" : ""}
           >
-            Verein
+            Satzung
           </Link>
           <Link
             href="/mitglied"

@@ -11,10 +11,12 @@ export async function getBoardMembers(): Promise<BoardMember[]> {
     content_type: "boardMember",
     include: 2, // Fetches linked asses
   });
-  return entries.items.map((entry) => ({
-    sys: { id: entry.sys.id },
-    fields: entry.fields as BoardMember["fields"],
-  }));
+  return entries.items
+    .map((entry) => ({
+      sys: { id: entry.sys.id },
+      fields: entry.fields as BoardMember["fields"],
+    }))
+    .sort((a, b) => (a.fields.order ?? 99) - (b.fields.order ?? 99));
 }
 
 export async function getImpressum(): Promise<ImpressumContent> {

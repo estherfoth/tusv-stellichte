@@ -5,6 +5,7 @@ export type BoardMember = {
     phonenumber: string;
     email?: string;
     position: string;
+    order?: number;
     photo?: {
       sys: { id: string };
       fields: {
