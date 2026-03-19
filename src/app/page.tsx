@@ -9,25 +9,25 @@ import { getEventSponsors } from "@/data/eventSponsors";
 
 const strassenlaufRouten = [
   {
-    name: "Straßenlauf - 1200 m",
-    embedSrc:
-      "https://www.google.com/maps?q=Stra%C3%9Fenlauf%201200%20m%20Stellichte&output=embed",
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Stra%C3%9Fenlauf%201200%20m%20Stellichte",
-  },
-  {
-    name: "Straßenlauf - 2000 m",
-    embedSrc:
-      "https://www.google.com/maps?q=Stra%C3%9Fenlauf%202000%20m%20Stellichte&output=embed",
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Stra%C3%9Fenlauf%202000%20m%20Stellichte",
-  },
-  {
     name: "Straßenlauf - 3500 m",
     embedSrc:
-      "https://www.google.com/maps?q=Stra%C3%9Fenlauf%203500%20m%20Stellichte&output=embed",
+      "https://www.google.com/maps/d/embed?mid=1CnYuHQcZOswOEqd8cDw44eZMDee4Szg&ehbc=2E312F&noprof=1",
     mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Stra%C3%9Fenlauf%203500%20m%20Stellichte",
+      "https://www.google.com/maps/d/edit?mid=1CnYuHQcZOswOEqd8cDw44eZMDee4Szg&usp=sharing",
+  },
+  {
+    name: "Straßenlauf - 5000 m",
+    embedSrc:
+      "https://www.google.com/maps/d/embed?mid=13RbupbezGCR1Bl5PIBFuprnlOL1dDmE&ehbc=2E312F&noprof=1",
+    mapsUrl:
+      "https://www.google.com/maps/d/edit?mid=13RbupbezGCR1Bl5PIBFuprnlOL1dDmE&usp=sharing",
+  },
+  {
+    name: "Straßenlauf - 10.000 m",
+    embedSrc:
+      "https://www.google.com/maps/d/embed?mid=1Hb9_pgauBuS-N90KGo5don4iHKTN0js&ehbc=2E312F&noprof=1",
+    mapsUrl:
+      "https://www.google.com/maps/d/edit?mid=1Hb9_pgauBuS-N90KGo5don4iHKTN0js&usp=sharing",
   },
 ];
 
@@ -124,7 +124,10 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="race-route-grid" aria-label="Straßenlauf Streckenkarten">
+          <div
+            className="race-route-grid"
+            aria-label="Straßenlauf Streckenkarten"
+          >
             {strassenlaufRouten.map((route) => (
               <article className="race-route-card" key={route.name}>
                 <MapEmbed src={route.embedSrc} title={route.name} />
@@ -164,9 +167,9 @@ export default function Home() {
             </div>
             <p style={{ marginTop: "14px" }}>
               Mit Ihrer verbindlichen Anmeldung stimmen Sie zu, dass Daten sowie
-              fotografische Aufnahmen in Print- und Digital-Medien sowie auf
-              der Homepage des TuSV Stellichte veröffentlicht werden können.
-              Ein schriftlicher Widerspruch ist möglich.
+              fotografische Aufnahmen in Print- und Digital-Medien sowie auf der
+              Homepage des TuSV Stellichte veröffentlicht werden können. Ein
+              schriftlicher Widerspruch ist möglich.
             </p>
           </div>
           <div className="card" style={{ marginBottom: "24px" }}>
@@ -181,13 +184,15 @@ export default function Home() {
                   </tr>
                 </thead>
                 <tbody>
-                  {strassenlaufDisziplinen.map(([disziplin, startzeit, strecke]) => (
-                    <tr key={disziplin}>
-                      <td>{disziplin}</td>
-                      <td>{startzeit}</td>
-                      <td>{strecke}</td>
-                    </tr>
-                  ))}
+                  {strassenlaufDisziplinen.map(
+                    ([disziplin, startzeit, strecke]) => (
+                      <tr key={disziplin}>
+                        <td>{disziplin}</td>
+                        <td>{startzeit}</td>
+                        <td>{strecke}</td>
+                      </tr>
+                    ),
+                  )}
                 </tbody>
               </table>
             </div>
@@ -212,7 +217,12 @@ export default function Home() {
             </label>
             <label>
               Wohnort *
-              <input type="text" name="city" autoComplete="address-level2" required />
+              <input
+                type="text"
+                name="city"
+                autoComplete="address-level2"
+                required
+              />
             </label>
             <label>
               Geschlecht *
@@ -225,7 +235,13 @@ export default function Home() {
             </label>
             <label>
               Jahrgang *
-              <input type="number" name="birthyear" min="1900" max="2025" required />
+              <input
+                type="number"
+                name="birthyear"
+                min="1900"
+                max="2025"
+                required
+              />
             </label>
             <label>
               Verein
@@ -243,7 +259,9 @@ export default function Home() {
               Gewünschte Laufstrecke *
               <select name="distance" required defaultValue="">
                 <option value="">-</option>
-                <option value="walk-5km">1. Walken (ohne Zeitnahme) - 10:00 Uhr - 5,0 km</option>
+                <option value="walk-5km">
+                  1. Walken (ohne Zeitnahme) - 10:00 Uhr - 5,0 km
+                </option>
                 <option value="kinder-2020-juenger">
                   2. Laufen - Kinder Jg. 2020 u. jünger - 10:10 Uhr - 0,4 km
                 </option>

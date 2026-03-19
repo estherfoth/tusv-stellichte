@@ -159,12 +159,18 @@ img {
   gap: 24px;
   padding: 28px 32px;
   border-radius: 28px;
-  background: linear-gradient(120deg, rgba(2, 48, 190, 0.12), rgba(93, 143, 240, 0.24));
+  background: linear-gradient(
+    120deg,
+    rgba(2, 48, 190, 0.12),
+    rgba(93, 143, 240, 0.24)
+  );
   border: 1px solid rgba(2, 48, 190, 0.18);
   color: inherit;
   text-decoration: none;
   box-shadow: 0 14px 28px rgba(9, 21, 38, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .news-box h2 {
@@ -214,11 +220,8 @@ img {
   position: absolute;
   inset: 0;
   height: 100%;
-  background-image: linear-gradient(
-      120deg,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.4)
-    ),
+  background-image:
+    linear-gradient(120deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
     url("/images/Badeteich.png");
   background-size: cover;
   background-position: center;
@@ -350,7 +353,9 @@ img {
   border-radius: 999px;
   font-weight: 600;
   border: 1px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn.primary {
@@ -423,7 +428,11 @@ img {
 
 .hero-placeholder {
   min-height: 240px;
-  background: linear-gradient(135deg, rgba(2, 48, 190, 0.18), rgba(93, 143, 240, 0.24));
+  background: linear-gradient(
+    135deg,
+    rgba(2, 48, 190, 0.18),
+    rgba(93, 143, 240, 0.24)
+  );
   border: 1px dashed rgba(11, 60, 135, 0.35);
   display: grid;
   place-items: center;
@@ -443,7 +452,11 @@ img {
 }
 
 .news-carousel {
-  background: linear-gradient(135deg, rgba(2, 48, 190, 0.08), rgba(93, 143, 240, 0.16));
+  background: linear-gradient(
+    135deg,
+    rgba(2, 48, 190, 0.08),
+    rgba(93, 143, 240, 0.16)
+  );
   border: 1px solid rgba(11, 60, 135, 0.15);
   border-radius: 18px;
   padding: 18px 20px 16px;
@@ -795,7 +808,9 @@ img {
 
 .card-link .card {
   height: 100%;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .card-link:hover .card,
@@ -862,6 +877,7 @@ img {
 }
 
 .map-card {
+  height: 200px;
   background: var(--card);
   border-radius: 24px;
   overflow: hidden;
@@ -1281,7 +1297,9 @@ img {
 .reveal {
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .reveal.in-view {
