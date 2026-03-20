@@ -2,6 +2,7 @@ import Hero from "./components/ui/Hero";
 import NewsCarousel from "./components/ui/NewsCarousel";
 import SponsorGrid from "./components/ui/SponsorGrid";
 import MapEmbed from "./components/ui/MapEmbed";
+import RaceRouteGallery from "./components/ui/RaceRouteGallery";
 import Link from "next/link";
 import { newsSlides } from "@/data/news";
 import { sponsors } from "@/data/sponsors";
@@ -10,24 +11,18 @@ import { getEventSponsors } from "@/data/eventSponsors";
 const strassenlaufRouten = [
   {
     name: "Straßenlauf - 1200 m",
-    embedSrc:
-      "https://www.google.com/maps?q=Stra%C3%9Fenlauf%201200%20m%20Stellichte&output=embed",
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Stra%C3%9Fenlauf%201200%20m%20Stellichte",
+    imageSrc: "/images/1200m-lauf.jpeg",
+    imageAlt: "Streckenverlauf des Straßenlaufs über 1200 Meter in Stellichte",
   },
   {
     name: "Straßenlauf - 2000 m",
-    embedSrc:
-      "https://www.google.com/maps?q=Stra%C3%9Fenlauf%202000%20m%20Stellichte&output=embed",
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Stra%C3%9Fenlauf%202000%20m%20Stellichte",
+    imageSrc: "/images/2000m-lauf.jpeg",
+    imageAlt: "Streckenverlauf des Straßenlaufs über 2000 Meter in Stellichte",
   },
   {
     name: "Straßenlauf - 3500 m",
-    embedSrc:
-      "https://www.google.com/maps?q=Stra%C3%9Fenlauf%203500%20m%20Stellichte&output=embed",
-    mapsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Stra%C3%9Fenlauf%203500%20m%20Stellichte",
+    imageSrc: "/images/3500m-lauf.jpeg",
+    imageAlt: "Streckenverlauf des Straßenlaufs über 3500 Meter in Stellichte",
   },
 ];
 
@@ -124,24 +119,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="race-route-grid" aria-label="Straßenlauf Streckenkarten">
-            {strassenlaufRouten.map((route) => (
-              <article className="race-route-card" key={route.name}>
-                <MapEmbed src={route.embedSrc} title={route.name} />
-                <div className="race-route-content">
-                  <h3>{route.name}</h3>
-                  <a
-                    href={route.mapsUrl}
-                    className="card-external"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    In Google Maps öffnen
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
+          <RaceRouteGallery routes={strassenlaufRouten} />
           <div className="card" style={{ marginBottom: "20px" }}>
             <h3>Eckdaten zum Straßenlauf</h3>
             <div className="table-wrap">
