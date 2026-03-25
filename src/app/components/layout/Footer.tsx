@@ -47,7 +47,7 @@ export default function Footer() {
             target="_blank"
             rel="noreferrer"
           >
-            Facebook FGF Uelzen/Stellichte
+            Facebook FG Fulde/Stellichte
           </a>
           <a
             href="https://www.mytischtennis.de/click-tt/verbaende"
