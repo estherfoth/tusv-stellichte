@@ -78,21 +78,60 @@ export default function Home() {
           },
         ]}
         gallery={[
-          {
-            src: "/images/fg-spielplan-1.svg",
-            alt: "Spielplan FG Fulde-Stellichte - Termin 1",
-            caption: "Sa, 23.08.2025 | Stellichte | 15:00 Uhr",
-          },
-          {
-            src: "/images/fg-spielplan-2.svg",
-            alt: "Spielplan FG Fulde-Stellichte - Termin 2",
-            caption: "So, 31.08.2025 | Walsrode | 13:00 Uhr",
-          },
-          {
-            src: "/images/fg-spielplan-3.svg",
-            alt: "Spielplan FG Fulde-Stellichte - Termin 3",
-            caption: "So, 07.09.2025 | Fulde | 14:00 Uhr",
-          },
+          // Fußball
+          [
+            {
+              src: "/images/fg-spielplan-1.svg",
+              alt: "Spielplan FG Fulde-Stellichte - Termin 1",
+              caption: "Sa, 23.08.2025 | Stellichte | 15:00 Uhr",
+            },
+            {
+              src: "/images/fg-spielplan-2.svg",
+              alt: "Spielplan FG Fulde-Stellichte - Termin 2",
+              caption: "So, 31.08.2025 | Walsrode | 13:00 Uhr",
+            },
+            {
+              src: "/images/fg-spielplan-3.svg",
+              alt: "Spielplan FG Fulde-Stellichte - Termin 3",
+              caption: "So, 07.09.2025 | Fulde | 14:00 Uhr",
+            },
+          ],
+          // Tischtennis
+          [
+            {
+              src: "/images/fg-spielplan-1.svg",
+              alt: "Spielplan FG Fulde-Stellichte - Termin 1",
+              caption: "Sa, 23.08.2025 | Stellichte | 15:00 Uhr",
+            },
+            {
+              src: "/images/fg-spielplan-2.svg",
+              alt: "Spielplan FG Fulde-Stellichte - Termin 2",
+              caption: "So, 31.08.2025 | Walsrode | 13:00 Uhr",
+            },
+            {
+              src: "/images/fg-spielplan-3.svg",
+              alt: "Spielplan FG Fulde-Stellichte - Termin 3",
+              caption: "So, 07.09.2025 | Fulde | 14:00 Uhr",
+            },
+          ],
+          // Fußball 2
+          [
+            {
+              src: "/images/fg-spielplan-1.svg",
+              alt: "Spielplan FG Fulde-Stellichte - Termin 1",
+              caption: "Sa, 23.08.2025 | Stellichte | 15:00 Uhr",
+            },
+            {
+              src: "/images/fg-spielplan-2.svg",
+              alt: "Spielplan FG Fulde-Stellichte - Termin 2",
+              caption: "So, 31.08.2025 | Walsrode | 13:00 Uhr",
+            },
+            {
+              src: "/images/fg-spielplan-3.svg",
+              alt: "Spielplan FG Fulde-Stellichte - Termin 3",
+              caption: "So, 07.09.2025 | Fulde | 14:00 Uhr",
+            },
+          ],
         ]}
       />
 

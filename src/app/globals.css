@@ -246,14 +246,56 @@ img {
   max-width: none;
 }
 
-.hero-gallery {
+.hero-gallery-wrap {
   align-self: center;
-  display: grid;
-  gap: 18px;
-  max-width: 360px;
   justify-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 360px;
+  transform: translateY(-55px);
 }
 
+.hero-gallery {
+  display: grid;
+  gap: 18px;
+  transition: opacity 0.4s ease;
+}
+
+.hero-gallery--fading {
+  opacity: 0;
+}
+
+.hero-gallery-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-gallery-progress {
+  flex: 1;
+  height: 4px;
+  background: rgba(11, 60, 135, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.hero-gallery-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--primary);
+  border-radius: 2px;
+  animation: gallery-progress 8s linear forwards;
+}
+
+@keyframes gallery-progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
 .hero-photo {
   margin: 0;
   background: rgba(255, 255, 255, 0.92);
@@ -261,15 +303,6 @@ img {
   padding: 12px;
   box-shadow: 0 16px 32px rgba(9, 21, 38, 0.18);
   border: 1px solid rgba(11, 60, 135, 0.12);
-  transform: rotate(-2deg);
-}
-
-.hero-photo:nth-child(2) {
-  transform: rotate(2deg);
-}
-
-.hero-photo:nth-child(3) {
-  transform: rotate(-1deg);
 }
 
 .hero-photo img {
@@ -1312,7 +1345,7 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .hero-gallery {
+  .hero-gallery-wrap {
     max-width: none;
     justify-self: start;
   }
