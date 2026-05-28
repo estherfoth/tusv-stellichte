@@ -7,62 +7,40 @@ export default function EnergyDancePage() {
       <Hero
         variant="page"
         eyebrow="Kurse"
-        title="Energy Dance"
+        title="ENERGY DANCE®"
         description="Power, Rhythmus und Spaß mit energiegeladenen Moves – tanzen und fit werden."
       />
 
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Energy Dance beim TuSV</h2>
+            <h2>Was erwartet dich?</h2>
             <p>
-              Energy Dance ist ein dynamisches Tanzworkout, das Fitness und
-              Choreografie verbindet. Zu mitreißender Musik werden
-              Bewegungsabläufe einstudiert, die Ausdauer, Koordination und Spaß
-              miteinander vereinen.
+              Frei nach dem Motto „Raus aus dem Kopf – rein in den Körper“
+              kannst Du beim Energy Dance zu motivierender Musik und ohne Takte
+              zu zählen in Bewegung kommen. Es beinhaltet eine Aufwärmphase, ein
+              Standstretching, eine Intensivierungsphase und die Bodenarbeit mit
+              Dehnungs- sowie Kräftigungsübungen und die Entspannungsphase. Da
+              der Körper in einem harmonischen Bewegungsfluss und ohne
+              plötzliche Wechsel bewegt wird, können auch Ungeübte leicht und
+              unmittelbar folgen.
             </p>
           </div>
-
-          <div className="card-grid">
-            <article className="card">
-              <h3>Cardio & Ausdauer</h3>
-              <p>
-                Intensives Ausdauertraining zu energiegeladener Musik –
-                effektiv und motivierend.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Choreografie & Rhythmus</h3>
-              <p>
-                Tanzschritte und Choreografien trainieren Koordination und
-                Rhythmusgefühl.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Spaß & Gruppengefühl</h3>
-              <p>
-                Gemeinsam tanzen macht Freude und sorgt für gute Laune und
-                Motivation.
-              </p>
-            </article>
-          </div>
-
-          <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Für wen ist Energy Dance geeignet?</h2>
-          </div>
-          <p>
-            Der Kurs richtet sich an alle, die Freude an Bewegung und Musik
-            haben. Tanzerfahrung ist nicht erforderlich – die Choreografien
-            werden Schritt für Schritt aufgebaut.
-          </p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Kurszeiten</h2>
           </div>
-          <p>
-            Die aktuellen Kurszeiten finden Sie auf der{" "}
-            <Link href="/trainingszeiten">Trainingszeiten-Seite</Link>.
-          </p>
+          <p>Mittwoch 18:00 bis 19:15 Uhr</p>
+
+          <div className="section-head" style={{ marginTop: "48px" }}>
+            <h2>Kursleitung</h2>
+          </div>
+          <p>Carmen Baumann</p>
+
+          <div className="section-head" style={{ marginTop: "48px" }}>
+            <h2>Wo?</h2>
+          </div>
+          <p>Sporthalle</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Mitmachen?</h2>
