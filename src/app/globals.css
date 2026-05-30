@@ -614,7 +614,7 @@ img {
 }
 
 .section {
-  padding: 80px 0;
+  padding: 40px 0;
 }
 
 .section.section-compact {
@@ -623,6 +623,10 @@ img {
 
 .section.alt {
   background: var(--bg);
+}
+
+.section-body {
+  margin-left: 20px;
 }
 
 .sponsor-grid {

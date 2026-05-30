@@ -14,57 +14,50 @@ export default function TischtennisPage() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Tischtennis beim TuSV</h2>
-            <p>
-              Tischtennis verbindet Schnelligkeit, Präzision und Taktik. Bei
-              uns trainieren Anfänger und Fortgeschrittene gemeinsam und können
-              sich in Wettkämpfen oder freien Spielrunden messen.
+            <h2>Was erwartet dich?</h2>
+            <p className="section-body">
+              Die Tischtennissparte im TuSV Stellichte besteht seit 1983.
+              Zurzeit nehmen zwei Mannschaften, (Damen und Herren gemischt), am
+              Punktspielbetrieb teil. Wer Lust hat, am Trainings- oder gerne
+              auch am Punktspielbetrieb teilzunehmen ist herzlich eingeladen, in
+              der Halle vorbeizuschauen. Tischtennis ist in jedem Alter ein
+              geeigneter Sport, den Körper beweglich und in Schwung zu halten.
             </p>
           </div>
 
-          <div className="card-grid">
-            <article className="card">
-              <h3>Wettkampfteams</h3>
-              <p>
-                Unsere Teams spielen in regionalen Ligen und trainieren
-                regelmäßig, um Technik und Taktik zu verbessern.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Freies Spiel</h3>
-              <p>
-                Offene Spielzeiten ermöglichen es, ohne Wettkampfdruck zu
-                spielen und neue Schläge auszuprobieren.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Jugendförderung</h3>
-              <p>
-                Wir bieten gezieltes Training für Kinder und Jugendliche, um
-                den Nachwuchs zu fördern.
-              </p>
-            </article>
+          <div className="section-head" style={{ marginTop: "48px" }}>
+            <h2>Kurszeiten:</h2>
           </div>
+          <p className="section-body">Montag ab 19:30 Uhr</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Trainingszeiten</h2>
+            <h2>Kursleitung:</h2>
           </div>
-          <p>
-            Die aktuellen Trainings- und Spielzeiten finden Sie auf unserer{" "}
-            <Link href="/trainingszeiten">Trainingszeiten-Seite</Link>.
-          </p>
+          <p className="section-body">Joachim Winkelmann</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Mitspielen?</h2>
+            <h2>Wo?</h2>
           </div>
-          <p>
-            Interesse am Tischtennis? Schauen Sie beim Training vorbei oder
-            schreiben Sie uns über das{" "}
-            <Link href="/kontakt">Kontaktformular</Link>.
+          <p className="section-body">Sporthalle</p>
+
+          <div className="section-head" style={{ marginTop: "48px" }}>
+            <h2>Mitmachen?</h2>
+          </div>
+          <p className="section-body">
+            Probiere es aus! Schnupperstunden sind möglich –{" "}
+            <Link href="/kontakt">kontaktiere uns</Link> für weitere
+            Informationen.
+            <br />
+            <br />
+            Joachim Winkelmann: <a href="tel:+495168267">05168/267</a>
+            <br />
+            Karin Höfer: <a href="tel:+4951681298">05168/1298</a>
+            <br />
+            Jupp Schätzmüller: <a href="tel:+4951681237">05168/1237</a>
           </p>
           <div className="hero-actions" style={{ marginTop: "24px" }}>
             <Link href="/trainingszeiten" className="btn primary">
-              Trainingszeiten ansehen
+              Kurszeiten ansehen
             </Link>
             <Link href="/kontakt" className="btn ghost">
               Kontakt aufnehmen

@@ -14,65 +14,49 @@ export default function BoulePage() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Boule beim TuSV</h2>
-            <p>
-              Boule (auch Pétanque genannt) ist ein geselliges Kugel-Spiel, das
-              Präzision, Taktik und Konzentration erfordert. Bei uns wird in
-              entspannter Atmosphäre gespielt – für Jung und Alt.
+            <h2>Was erwartet dich?</h2>
+            <p className="section-body">
+              Wir sind eine Gruppe Erwachsener, die sich donnerstags
+              ausschließlich zum Vergnügen zu ein paar Runden Boule treffen. Je
+              nach Teilnehmerzahl spielen wir Double oder Triplette. Wer Lust
+              auf „legen“, „schießen“ oder „Schweinchen treiben“ hat, ist
+              jederzeit gerne gesehen.
             </p>
           </div>
 
-          <div className="card-grid">
-            <article className="card">
-              <h3>Präzision & Taktik</h3>
-              <p>
-                Boule trainiert Zielsicherheit, räumliches Denken und
-                strategisches Spielen.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Entspannt & gesellig</h3>
-              <p>
-                Das Spiel findet in lockerer Atmosphäre statt – perfekt für
-                einen gemütlichen Nachmittag.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Für alle Altersgruppen</h3>
-              <p>
-                Boule ist einfach zu lernen und für alle geeignet – ob jung
-                oder alt.
-              </p>
-            </article>
+          <div className="section-head" style={{ marginTop: "48px" }}>
+            <h2>Kurszeiten:</h2>
           </div>
+          <p className="section-body">Donnerstag ab 15:30 Uhr</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Wie wird gespielt?</h2>
+            <h2>Kursleitung:</h2>
           </div>
-          <p>
-            Beim Boule versuchen zwei Teams, ihre Kugeln möglichst nah an eine
-            Zielkugel (Cochonnet) zu platzieren. Gespielt wird auf
-            Sand- oder Kiesflächen im Freien.
+          <p className="section-body">Findet ohne Trainer statt</p>
+
+          <div className="section-head" style={{ marginTop: "48px" }}>
+            <h2>Wo?</h2>
+          </div>
+          <p className="section-body">
+            An der Boule-Anlage zwischen Sporthalle Stellichte und Grillhütte
           </p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Spielzeiten</h2>
+            <h2>Mitmachen?</h2>
           </div>
-          <p>
-            Die aktuellen Spielzeiten finden Sie auf der{" "}
-            <Link href="/trainingszeiten">Trainingszeiten-Seite</Link>.
-          </p>
-
-          <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Mitspielen?</h2>
-          </div>
-          <p>
-            Lust auf Boule? Kommen Sie vorbei und spielen Sie mit! Für
-            Rückfragen <Link href="/kontakt">kontaktieren Sie uns</Link>.
+          <p className="section-body">
+            Probiere es aus! Schnupperstunden sind möglich –{" "}
+            <Link href="/kontakt">kontaktiere uns</Link> für weitere
+            Informationen.
+            <br />
+            <br />
+            Eckbert Meyer: <a href="tel:+495168536">05168/536</a>
+            <br />
+            Joachim Winkelmann: <a href="tel:+495168267">05168/267</a>
           </p>
           <div className="hero-actions" style={{ marginTop: "24px" }}>
             <Link href="/trainingszeiten" className="btn primary">
-              Spielzeiten ansehen
+              Kurszeiten ansehen
             </Link>
             <Link href="/kontakt" className="btn ghost">
               Kontakt aufnehmen

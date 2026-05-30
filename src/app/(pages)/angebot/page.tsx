@@ -22,7 +22,10 @@ export default function AngebotPage() {
           {/* Kurse */}
           <div className="subsection-head">
             <h3>Kurse</h3>
-            <p>Yoga, Energy Dance und Pilates als feste Kursangebote.</p>
+            <p>
+              Yoga, Energy Dance, Tango Argentino und Pilates als feste
+              Kursangebote.
+            </p>
           </div>
           <div className="card-grid">
             <Card
@@ -34,7 +37,7 @@ export default function AngebotPage() {
             />
             <Card
               variant="course"
-              title="Energy Dance"
+              title="ENERGY DANCE®"
               description="Power, Rhythmus und Spaß mit energiegeladenen Moves."
               image={{
                 src: "/images/step_aerobic.png",
@@ -44,10 +47,20 @@ export default function AngebotPage() {
             />
             <Card
               variant="course"
-              title="Pilates"
-              description="Kräftigung der Körpermitte und bewusste Haltung."
+              title="Tango Argentino"
+              description="Eleganz, Nähe und Improvisation – der klassische Paartanz aus Buenos Aires."
+              image={{
+                src: "/images/step_aerobic.png",
+                alt: "Tango Argentino Kurs",
+              }}
+              link={{ href: "/kurse/tango-argentino", text: "Mehr erfahren" }}
+            />
+            <Card
+              variant="course"
+              title="TriloCHi®"
+              description="Eine harmonische Kombination aus Yoga, Tai Chi und Qigong für mehr Ruhe und Vitalität."
               image={{ src: "/images/bauch-beine-po.png", alt: "Pilates Kurs" }}
-              link={{ href: "/kurse/pilates", text: "Mehr erfahren" }}
+              link={{ href: "/kurse/trilo-chi", text: "Mehr erfahren" }}
             />
           </div>
 
@@ -200,7 +213,10 @@ export default function AngebotPage() {
               title="Halle mieten"
               description="Sie möchten unsere Halle für Training, Sportgruppen oder ein Event anfragen? Stellen Sie Ihre Anfrage direkt über das Kontaktformular."
               image={{ src: "/images/hallenmiete.svg", alt: "Halle mieten" }}
-              link={{ href: "/kontakt#kontaktformular", text: "Jetzt anfragen" }}
+              link={{
+                href: "/kontakt#kontaktformular",
+                text: "Jetzt anfragen",
+              }}
             />
           </div>
         </div>

@@ -1,14 +1,14 @@
 import Hero from "@/app/components/ui/Hero";
 import Link from "next/link";
 
-export default function EnergyDancePage() {
+export default function TangoArgentinoPage() {
   return (
     <main>
       <Hero
         variant="page"
         eyebrow="Kurse"
-        title="ENERGY DANCE®"
-        description="Power, Rhythmus und Spaß mit energiegeladenen Moves – tanzen und fit werden."
+        title="Tango Argentino"
+        description="Eleganz, Nähe und Improvisation – der klassische Paartanz aus Buenos Aires."
       />
 
       <section className="section">
@@ -16,31 +16,27 @@ export default function EnergyDancePage() {
           <div className="section-head">
             <h2>Was erwartet dich?</h2>
             <p className="section-body">
-              Frei nach dem Motto „Raus aus dem Kopf – rein in den Körper“
-              kannst Du beim Energy Dance zu motivierender Musik und ohne Takte
-              zu zählen in Bewegung kommen. Es beinhaltet eine Aufwärmphase, ein
-              Standstretching, eine Intensivierungsphase und die Bodenarbeit mit
-              Dehnungs- sowie Kräftigungsübungen und die Entspannungsphase. Da
-              der Körper in einem harmonischen Bewegungsfluss und ohne
-              plötzliche Wechsel bewegt wird, können auch Ungeübte leicht und
-              unmittelbar folgen.
+              Zur wunderschönen Tangomusik tanzen hier Paare mit Grund- und
+              erweiterten Kenntnissen. Ohne einen professionellen Tanzkursleiter
+              werden neue Schrittkombinationen per Youtube gelernt. Einmal im
+              Jahr wird zusammen nach Bremen in einen der Tangosalons gefahren.
             </p>
           </div>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Kurszeiten:</h2>
           </div>
-          <p className="section-body">Mittwoch 18:00 bis 19:15 Uhr</p>
+          <p className="section-body">Sonntag 15.30 - 17.00 Uhr</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Kursleitung:</h2>
           </div>
-          <p className="section-body">Carmen Baumann</p>
+          <p className="section-body">Kerstin Pütting-Behrens</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Wo?</h2>
           </div>
-          <p className="section-body">Sporthalle</p>
+          <p className="section-body">Gymnastikraum (mit Spiegelwand)</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Mitmachen?</h2>
@@ -51,8 +47,10 @@ export default function EnergyDancePage() {
             Informationen.
             <br />
             <br />
-            Bettina Engel: <a href="tel:+4951681256">05168/1256</a>
+            Kerstin Pütting–Behrens:{" "}
+            <a href="tel:+495168918096">05168/918096</a>
           </p>
+
           <div className="hero-actions" style={{ marginTop: "24px" }}>
             <Link href="/trainingszeiten" className="btn primary">
               Kurszeiten ansehen

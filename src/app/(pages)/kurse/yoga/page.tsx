@@ -14,64 +14,47 @@ export default function YogaPage() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Yoga beim TuSV</h2>
-            <p>
-              Unser Yoga-Kurs verbindet körperliche Übungen (Asanas) mit
-              Atemtechniken und Meditation. Ziel ist es, Körper und Geist in
-              Einklang zu bringen und gleichzeitig Kraft, Flexibilität und
-              Entspannung zu fördern.
+            <h2>Was erwartet dich?</h2>
+            <p className="section-body">
+              Praktiziert wird Hatha Yoga, ein ruhigerer Stil, bei dem das
+              Gleichgewicht zwischen Körper und Geist durch körperliche Übungen,
+              die bewusst gehalten werden (Asanas), und durch Atemübungen
+              angestrebt wird. Ziele sind, die Gesundheit, Kraft und
+              Gelenkigkeit des Körpers zu verbessern, den Gleichgewichtssinn und
+              die Muskeln zu stärken und das Lungenvolumen und damit die
+              Vitalität zu erhöhen.
             </p>
           </div>
 
-          <div className="card-grid">
-            <article className="card">
-              <h3>Körperliche Fitness</h3>
-              <p>
-                Yoga stärkt die Muskulatur, verbessert die Haltung und fördert
-                die Beweglichkeit.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Entspannung & Achtsamkeit</h3>
-              <p>
-                Bewusste Atmung und Meditation helfen, Stress abzubauen und zur
-                Ruhe zu kommen.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Für alle Level</h3>
-              <p>
-                Anfänger und Fortgeschrittene sind gleichermaßen willkommen –
-                die Übungen werden individuell angepasst.
-              </p>
-            </article>
-          </div>
-
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Was erwartet dich?</h2>
+            <h2>Kurszeiten:</h2>
           </div>
-          <p>
-            In unseren Yoga-Stunden kombinieren wir verschiedene Yoga-Stile und
-            passen die Übungen an die Bedürfnisse der Gruppe an. Jede Einheit
-            beginnt mit einer kurzen Entspannung und endet mit einer
-            Schlussmeditation.
+          <p className="section-body">
+            Montag 18.00 bis 19.00 Uhr & Mittwoch 9.30 bis 11.00 Uhr
           </p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Kurszeiten</h2>
+            <h2>Kursleitung:</h2>
           </div>
-          <p>
-            Die aktuellen Kurszeiten finden Sie auf unserer{" "}
-            <Link href="/trainingszeiten">Trainingszeiten-Seite</Link>.
+          <p className="section-body">
+            Anke Janowicz (Montag) & Luzia Limberg (Mittwoch)
           </p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Interesse?</h2>
+            <h2>Wo?</h2>
           </div>
-          <p>
-            Schnupperstunden sind nach Absprache möglich.{" "}
-            <Link href="/kontakt">Kontaktieren Sie uns</Link> für weitere
+          <p className="section-body">Sporthalle</p>
+
+          <div className="section-head" style={{ marginTop: "48px" }}>
+            <h2>Mitmachen?</h2>
+          </div>
+          <p className="section-body">
+            Probiere es aus! Schnupperstunden sind möglich –{" "}
+            <Link href="/kontakt">kontaktiere uns</Link> für weitere
             Informationen.
+            <br />
+            <br />
+            Bettina Engel: <a href="tel:+4951681256">05168/1256</a>
           </p>
           <div className="hero-actions" style={{ marginTop: "24px" }}>
             <Link href="/trainingszeiten" className="btn primary">
