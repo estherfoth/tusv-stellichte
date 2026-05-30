@@ -1,14 +1,14 @@
 import Hero from "@/app/components/ui/Hero";
 import Link from "next/link";
 
-export default function EnergyDancePage() {
+export default function TriloCHiPage() {
   return (
     <main>
       <Hero
         variant="page"
         eyebrow="Kurse"
-        title="ENERGY DANCE®"
-        description="Power, Rhythmus und Spaß mit energiegeladenen Moves – tanzen und fit werden."
+        title="TriloCHi®"
+        description="Eine harmonische Kombination aus Yoga, Tai Chi und Qigong für mehr Ruhe und Vitalität."
       />
 
       <section className="section">
@@ -16,31 +16,42 @@ export default function EnergyDancePage() {
           <div className="section-head">
             <h2>Was erwartet dich?</h2>
             <p className="section-body">
-              Frei nach dem Motto „Raus aus dem Kopf – rein in den Körper“
-              kannst Du beim Energy Dance zu motivierender Musik und ohne Takte
-              zu zählen in Bewegung kommen. Es beinhaltet eine Aufwärmphase, ein
-              Standstretching, eine Intensivierungsphase und die Bodenarbeit mit
-              Dehnungs- sowie Kräftigungsübungen und die Entspannungsphase. Da
-              der Körper in einem harmonischen Bewegungsfluss und ohne
-              plötzliche Wechsel bewegt wird, können auch Ungeübte leicht und
-              unmittelbar folgen.
+              TriloCHi ist ein ganzheitliches Fitness- und Entspannungskonzept,
+              das westliche Trainingsmethoden mit fernöstlichen Bewegungslehren
+              verbindet. Ziel ist es, Körper, Geist und Seele in Einklang zu
+              bringen, Stress abzubauen und die eigene Körpermitte zu finden.
             </p>
+            <div className="section-body">
+              TriloChi besteht aus drei Säulen:
+              <ol>
+                <li>
+                  ChiYoga: Yoga- und Pilates Übungen für Rücken und Beckenboden
+                </li>
+                <li>
+                  PowerChi: Meridianaktivierung und Herzkreislauf-Anregung
+                </li>
+                <li>
+                  ChiFlowMotion: Entspannungsübungen inspiriert duch Tai Ji und
+                  Qi Gong.
+                </li>
+              </ol>
+            </div>
           </div>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Kurszeiten:</h2>
           </div>
-          <p className="section-body">Mittwoch 18:00 bis 19:15 Uhr</p>
+          <p className="section-body">Donnerstag 17.00 bis 18.00 Uhr</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Kursleitung:</h2>
           </div>
-          <p className="section-body">Carmen Baumann</p>
+          <p className="section-body">Anett Winter</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Wo?</h2>
           </div>
-          <p className="section-body">Sporthalle</p>
+          <p className="section-body">Gymnastikraum</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Mitmachen?</h2>
@@ -49,8 +60,8 @@ export default function EnergyDancePage() {
             Probiere es aus! Schnupperstunden sind möglich –{" "}
             <Link href="/kontakt">kontaktiere uns</Link> für weitere
             Informationen.
-            <br />
-            <br />
+          </p>
+          <p className="section-body">
             Bettina Engel: <a href="tel:+4951681256">05168/1256</a>
           </p>
           <div className="hero-actions" style={{ marginTop: "24px" }}>
