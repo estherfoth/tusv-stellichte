@@ -1,5 +1,4 @@
 import Hero from "@/app/components/ui/Hero";
-import Link from "next/link";
 
 export default function HerrengymnastikPage() {
   return (
@@ -14,61 +13,38 @@ export default function HerrengymnastikPage() {
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Herrengymnastik beim TuSV</h2>
-            <p>
-              Die Herrengymnastik bietet ein vielseitiges Programm zur
-              Verbesserung von Kraft, Ausdauer und Beweglichkeit. Ideal als
-              Ausgleich zum Arbeitsalltag.
+            <h2>Was erwartet Dich?</h2>
+            <p className="section-body">
+              Runter vom Sofa, rein in die Halle – bei unserer Herrengymnastik
+              erwartet Dich ein abwechslungsreiches Training für den ganzen
+              Körper, welches Fitness, Kraft, Koordination und Beweglichkeit
+              fördert. In lockerer Runde gemeinsam aktiv sein, fit bleiben und
+              mit Spaß in Bewegung kommen – darum geht es bei der
+              Herrengymnastik.
             </p>
           </div>
 
-          <div className="card-grid">
-            <article className="card">
-              <h3>Krafttraining</h3>
-              <p>
-                Gezielte Übungen zur Stärkung der Muskulatur und Verbesserung
-                der Körperspannung.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Mobilität & Stabilität</h3>
-              <p>
-                Übungen für mehr Beweglichkeit, Balance und Stabilität im
-                Alltag.
-              </p>
-            </article>
-            <article className="card">
-              <h3>Gruppendynamik</h3>
-              <p>
-                Gemeinsam trainieren macht mehr Spaß – Motivation und Austausch
-                inklusive.
-              </p>
-            </article>
+          <div className="section-head" style={{ marginTop: "48px" }}>
+            <h2>Übungs-/Kurszeiten</h2>
           </div>
+          <p className="section-body">Dienstag von 19.15 Uhr bis 20.15 Uhr</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Wann trainieren wir?</h2>
+            <h2>Übungs-/Kursleiter/in</h2>
           </div>
-          <p>
-            Die aktuellen Trainingszeiten finden Sie auf unserer{" "}
-            <Link href="/trainingszeiten">Trainingszeiten-Seite</Link>.
-          </p>
+          <p className="section-body">Annett Winter</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Interesse?</h2>
+            <h2>Wo?</h2>
           </div>
-          <p>
-            Probieren Sie es aus! Kommen Sie vorbei oder{" "}
-            <Link href="/kontakt">kontaktieren Sie uns</Link>.
+          <p className="section-body">Sporthalle</p>
+
+          <div className="section-head" style={{ marginTop: "48px" }}>
+            <h2>Information und Anmeldung bei:</h2>
+          </div>
+          <p className="section-body">
+            Marleen Bünger, Tel. <a href="tel:+495168558">05168/558</a>
           </p>
-          <div className="hero-actions" style={{ marginTop: "24px" }}>
-            <Link href="/trainingszeiten" className="btn primary">
-              Trainingszeiten ansehen
-            </Link>
-            <Link href="/kontakt" className="btn ghost">
-              Kontakt aufnehmen
-            </Link>
-          </div>
         </div>
       </section>
     </main>

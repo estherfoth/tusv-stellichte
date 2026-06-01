@@ -1,13 +1,13 @@
 import Hero from "@/app/components/ui/Hero";
 
-export default function DamengymnastikPage() {
+export default function ElternKindTurnenPage() {
   return (
     <main>
       <Hero
         variant="page"
-        eyebrow="Fitness & Gymnastik"
-        title="Damengymnastik"
-        description="Beweglichkeit, Kräftigung und gemeinsames Training in geselliger Atmosphäre."
+        eyebrow="Kinder & Jugend"
+        title="Eltern-Kind-Turnen"
+        description="Gemeinsam bewegen, entdecken und spielerisch wachsen."
       />
 
       <section className="section">
@@ -15,27 +15,30 @@ export default function DamengymnastikPage() {
           <div className="section-head">
             <h2>Was erwartet Dich?</h2>
             <p className="section-body">
-              Dich erwarten vielseitige Übungen für den ganzen Körper – von
-              Mobilisation und Kräftigung bis hin zu Dehnung und Gleichgewicht.
-              Gemeinsam aktiv sein, fit bleiben und Spaß an der Bewegung haben,
-              darum geht es bei uns.
+              Beim Eltern-Kind-Turnen erwartet Euch eine fröhliche
+              Bewegungsstunde mit kleinen Spielen, Turnlandschaften und vielen
+              Möglichkeiten zum Entdecken und Ausprobieren. In liebevoller
+              Atmosphäre fördern wir spielerisch Motorik, Koordination und
+              Freude an Bewegung
             </p>
           </div>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Übungs-/Kurszeiten</h2>
           </div>
-          <p className="section-body">Montag von 20.00 Uhr bis 21.00 Uhr</p>
+          <p className="section-body">
+            Donnerstag von 17.00 Uhr bis 18.00 Uhr
+          </p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Übungs-/Kursleiter/in</h2>
           </div>
-          <p className="section-body">Melanie Meins</p>
+          <p className="section-body">Marleen Bünger</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Wo?</h2>
           </div>
-          <p className="section-body">Gymnastikraum</p>
+          <p className="section-body">Sporthalle</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Information und Anmeldung bei:</h2>
