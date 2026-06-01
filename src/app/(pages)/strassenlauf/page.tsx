@@ -4,8 +4,8 @@ import Link from "next/link";
 import { getEventSponsors } from "@/data/eventSponsors";
 
 const veranstaltungsdaten = [
-  ["Veranstaltung", "Stellichter Straßenlauf 2025"],
-  ["Datum", "Sonntag, 17.08.2025"],
+  ["Veranstaltung", "Stellichter Straßenlauf 2026"],
+  ["Datum", "Sonntag, 17.08.2026"],
   ["Start und Ziel", "Sportplatz Stellichte"],
   [
     "Anmeldung",
