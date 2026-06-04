@@ -1,7 +1,23 @@
+"use client";
+import { useActionState, useEffect } from "react";
+
+import { registerRace, RegisterRaceState } from "@/app/actions/registerRace";
 import Hero from "@/app/components/ui/Hero";
 import Link from "next/link";
 
 export default function RegistrierungPage() {
+  const initialState: RegisterRaceState = { success: false };
+
+  const [state, formAction, isPending] = useActionState(
+    registerRace,
+    initialState,
+  );
+  useEffect(() => {
+    if (state.success || state.error) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [state]);
+
   return (
     <main>
       <Hero
@@ -16,12 +32,19 @@ export default function RegistrierungPage() {
           <div className="section-head">
             <h2>Online-Anmeldung</h2>
             <p>
-              Füllen Sie das Anmeldeformular aus, um sich für den Straßenlauf
-              zu registrieren.
+              Füllen Sie das Anmeldeformular aus, um sich für den Straßenlauf zu
+              registrieren.
             </p>
           </div>
 
-          <form className="contact-form race-form" action="#" method="post">
+          {state.success && (
+            <p style={{ color: "green" }}>
+              Anmeldung erfolgreich! Du erhältst eine Bestätigungsmail.
+            </p>
+          )}
+          {state.error && <p style={{ color: "red" }}>{state.error}</p>}
+
+          <form className="contact-form race-form" action={formAction}>
             <label>
               Vor- und Nachname *
               <input type="text" name="name" autoComplete="name" required />
@@ -36,7 +59,12 @@ export default function RegistrierungPage() {
             </label>
             <label>
               Wohnort *
-              <input type="text" name="city" autoComplete="address-level2" required />
+              <input
+                type="text"
+                name="city"
+                autoComplete="address-level2"
+                required
+              />
             </label>
             <label>
               Geschlecht *
@@ -49,14 +77,20 @@ export default function RegistrierungPage() {
             </label>
             <label>
               Jahrgang *
-              <input type="number" name="birthyear" min="1900" max="2025" required />
+              <input
+                type="number"
+                name="birthyear"
+                min="1900"
+                max="2026"
+                required
+              />
             </label>
             <label>
               Verein
               <input type="text" name="team" autoComplete="organization" />
             </label>
             <label>
-              Ihre E-Mail-Adresse
+              E-Mail-Adresse *
               <input type="email" name="email" autoComplete="email" required />
             </label>
             <label>
@@ -67,7 +101,9 @@ export default function RegistrierungPage() {
               Gewünschte Laufstrecke *
               <select name="distance" required defaultValue="">
                 <option value="">-</option>
-                <option value="walk-5km">1. Walken (ohne Zeitnahme) - 10:00 Uhr - 5,0 km</option>
+                <option value="walk-5km">
+                  1. Walken (ohne Zeitnahme) - 10:00 Uhr - 5,0 km
+                </option>
                 <option value="kinder-2020-juenger">
                   2. Laufen - Kinder Jg. 2020 u. jünger - 10:10 Uhr - 0,4 km
                 </option>
@@ -77,13 +113,13 @@ export default function RegistrierungPage() {
                 <option value="kinder-2012-2015">
                   4. Laufen - Kinder Jg. 2012 bis 2015 - 10:25 Uhr - 2,0 km
                 </option>
-                <option value="erwachsene-35km">
+                <option value="erwachsene-3,5km">
                   5. Laufen - Erwachsene - 11:00 Uhr - 3,5 km
                 </option>
-                <option value="erwachsene-50km">
+                <option value="erwachsene-5km">
                   6. Laufen - Erwachsene - 11:00 Uhr - 5,0 km
                 </option>
-                <option value="erwachsene-100km">
+                <option value="erwachsene-10km">
                   7. Laufen - Erwachsene - 11:00 Uhr - 10,0 km
                 </option>
               </select>
@@ -97,8 +133,8 @@ export default function RegistrierungPage() {
               Ich akzeptiere die{" "}
               <Link href="/datenschutz">Datenschutzerklärung</Link> *
             </label>
-            <button type="submit" className="btn primary">
-              Anmeldung absenden
+            <button type="submit" disabled={isPending} className="btn primary">
+              {isPending ? "Wird gesendet..." : "Anmeldung absenden"}
             </button>
           </form>
 
@@ -110,11 +146,6 @@ export default function RegistrierungPage() {
               background: "var(--bg-secondary)",
             }}
           >
-            <p>
-              <strong>Hinweis:</strong> Das Formular dient aktuell als
-              Platzhalter. Die finale Anmeldefunktion wird rechtzeitig vor dem
-              Event aktiviert.
-            </p>
             <p style={{ marginTop: "12px" }}>
               Sie können sich alternativ auch direkt am Veranstaltungstag vor
               Ort anmelden.
