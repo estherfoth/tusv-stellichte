@@ -243,7 +243,7 @@ Deno.serve(async (req) => {
     // A4 page is typically 595 x 842 points
 
     // Eintrittsdatum (after "ab dem")
-    drawText(formatGermanDate(payload.eintrittsdatum), 395, 710, 10);
+    drawText(formatGermanDate(payload.eintrittsdatum), 272, 615, 10);
 
     // Geschlecht - mark the selected checkbox with an X
     if (payload.geschlecht === "männlich") {
