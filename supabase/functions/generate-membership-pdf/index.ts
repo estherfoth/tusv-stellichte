@@ -7,24 +7,24 @@ import "@supabase/functions-js/edge-runtime.d.ts";
 // TypeScript interface for complete payload
 interface MembershipFormData {
   // Personal data
-  geschlecht?: "männlich" | "weiblich" | "divers";
+  geschlecht: "männlich" | "weiblich" | "divers";
   vorname: string;
   nachname: string;
-  strasse?: string;
-  hausnummer?: string;
-  plz?: string;
-  ort?: string;
-  geburtsdatum?: string;
-  sparte?: string;
-  telefonnummer?: string;
-  email?: string;
+  strasse: string;
+  hausnummer: string;
+  plz: string;
+  ort: string;
+  geburtsdatum: string;
+  sparte: string;
+  telefonnummer: string;
+  email: string;
 
   // Entry date
-  eintrittsdatum?: string;
+  eintrittsdatum: string;
 
   // Member signature
-  ort_mitglied?: string;
-  datum_mitglied?: string;
+  ort_mitglied: string;
+  datum_mitglied: string;
   signature_member: string; // base64 PNG
 
   // Parent/Guardian 1
@@ -36,10 +36,22 @@ interface MembershipFormData {
   ort_vertreter_2?: string;
   datum_vertreter_2?: string;
   signature_parent_2?: string | null;
+
+  // Sepa-Lastschriftmandat
+  kontoinhaber: string;
+  iban_suffix: string;
+  bic?: string;
+  bank: string;
+  ort_sepa: string;
+  datum_sepa: string;
+  signature_sepa: string;
 }
 
 // Validation function
-function validatePayload(payload: any): { valid: boolean; errors: string[] } {
+function validatePayload(payload: MembershipFormData): {
+  valid: boolean;
+  errors: string[];
+} {
   const errors: string[] = [];
 
   if (!payload.vorname?.trim()) errors.push("Vorname ist erforderlich");
@@ -59,6 +71,23 @@ function validatePayload(payload: any): { valid: boolean; errors: string[] } {
   // Validate email format if provided
   if (payload.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) {
     errors.push("Ungültige E-Mail-Adresse");
+  }
+
+  // SEPA fields
+  if (!payload.kontoinhaber?.trim())
+    errors.push("Name des Kontoinhabers ist erforderlich");
+  if (!payload.iban_suffix?.trim()) errors.push("IBAN ist erforderlich");
+  if (!payload.bank?.trim()) errors.push("Bank ist erforderlich");
+  if (!payload.datum_sepa?.trim())
+    errors.push("Datum für SEPA-Mandat ist erforderlich");
+  if (!payload.signature_sepa) {
+    errors.push("Unterschrift für SEPA-Mandat ist erforderlich");
+  }
+  if (
+    payload.signature_sepa &&
+    !payload.signature_sepa.startsWith("data:image/png;base64,")
+  ) {
+    errors.push("Ungültiges Signaturformat für SEPA (muss PNG sein)");
   }
 
   return {
@@ -227,14 +256,21 @@ Deno.serve(async (req) => {
     const pdfDoc = await PDFDocument.load(templateBytes);
     const pages = pdfDoc.getPages();
     const firstPage = pages[0];
+    const secondPage = pages[1];
     const { width, height } = firstPage.getSize();
 
     console.log(`[${requestId}] PDF page size: ${width}x${height}`);
 
     // Helper to draw text with safety check
-    const drawText = (text: string, x: number, y: number, size = 11) => {
+    const drawText = (
+      text: string,
+      x: number,
+      y: number,
+      size = 11,
+      page = firstPage,
+    ) => {
       if (text && text.trim()) {
-        firstPage.drawText(text, { x, y, size });
+        page.drawText(text, { x, y, size });
       }
     };
 
@@ -330,6 +366,26 @@ Deno.serve(async (req) => {
           height: 30,
         });
       }
+    }
+
+    // Page 2: SEPA-Basis-Lastschriftmandat
+    // Coordinates estimated from template layout (A4: 595x842 pts, y from bottom)
+    drawText(payload.kontoinhaber || "", 195, 618, 10, secondPage);
+    drawText(payload.iban_suffix || "", 125, 577, 10, secondPage);
+    drawText(payload.bic || "", 90, 536, 10, secondPage);
+    drawText(payload.bank || "", 310, 536, 10, secondPage);
+    drawText(formatGermanDate(payload.datum_sepa), 100, 495, 10, secondPage);
+
+    if (payload.signature_sepa) {
+      const sepaSig = await pdfDoc.embedPng(
+        base64ToUint8Array(payload.signature_sepa),
+      );
+      secondPage.drawImage(sepaSig, {
+        x: 350,
+        y: 495,
+        width: 110,
+        height: 30,
+      });
     }
 
     // Save PDF

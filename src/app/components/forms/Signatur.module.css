@@ -1,4 +1,5 @@
 .signatureWrapper {
+  align-self: flex-start;
   margin: 1rem 0;
   border: dotted;
   justify-self: center;

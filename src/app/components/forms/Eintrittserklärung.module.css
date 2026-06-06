@@ -42,6 +42,10 @@
   display: flex;
   justify-content: space-between;
 }
+.sepaSignatures {
+  display: flex;
+  justify-content: space-between;
+}
 
 .submitButton {
   margin-top: 2rem;
