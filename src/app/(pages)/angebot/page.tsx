@@ -97,12 +97,6 @@ export default function AngebotPage() {
           </div>
           <div className="card-grid">
             <Card
-              title="Turnen & Fitness"
-              description="Rückenfit, Bauch-Beine-Po und Kursangebote."
-              image={{ src: "/images/fitness.png", alt: "Turnen und Fitness" }}
-              link={{ href: "/sparten/fitness", text: "Mehr erfahren" }}
-            />
-            <Card
               title="Damengymnastik"
               description="Beweglichkeit, Kräftigung und gemeinsames Training."
               image={{
@@ -133,19 +127,10 @@ export default function AngebotPage() {
               }}
             />
             <Card
-              title="Step Aerobic"
-              description="Rhythmus, Ausdauer und Spaß in der Gruppe."
+              title="Step Aerobic mit Bauch Beine Po"
+              description="Step Aerobic und gezielte Kräftigung als aktives Ganzkörpertraining."
               image={{ src: "/images/step_aerobic.png", alt: "Step Aerobic" }}
               link={{ href: "/sparten/step-aerobic", text: "Mehr erfahren" }}
-            />
-            <Card
-              title="Bauch-Beine-Po"
-              description="Gezieltes Training für die Körpermitte."
-              image={{
-                src: "/images/bauch-beine-po.png",
-                alt: "Bauch-Beine-Po",
-              }}
-              link={{ href: "/sparten/bauch-beine-po", text: "Mehr erfahren" }}
             />
           </div>
 
@@ -160,6 +145,18 @@ export default function AngebotPage() {
               description="Turnen, Klettern und Koordination für Kinder."
               image={{ src: "/images/kinderturnen.png", alt: "Kinderturnen" }}
               link={{ href: "/sparten/kinderturnen", text: "Mehr erfahren" }}
+            />
+            <Card
+              title="Eltern-Kind-Turnen"
+              description="Gemeinsame Bewegung, Spiele und Turnlandschaften."
+              image={{
+                src: "/images/kindersport.png",
+                alt: "Eltern-Kind-Turnen",
+              }}
+              link={{
+                href: "/sparten/eltern-kind-turnen",
+                text: "Mehr erfahren",
+              }}
             />
           </div>
 
@@ -180,26 +177,6 @@ export default function AngebotPage() {
               description="Gemeinsam radeln und die Umgebung erkunden."
               image={{ src: "/images/radfahren.png", alt: "Radfahren" }}
               link={{ href: "/sparten/radfahren", text: "Mehr erfahren" }}
-            />
-          </div>
-
-          {/* Freizeit & Tanz */}
-          <div className="subsection-head">
-            <h3>Freizeit & Tanz</h3>
-            <p>Bewegung, Rhythmus und Geselligkeit.</p>
-          </div>
-          <div className="card-grid card-grid--compact card-grid--outdoor">
-            <Card
-              title="Boule"
-              description="Entspanntes Spiel unter freiem Himmel."
-              image={{ src: "/images/boule.png", alt: "Boule" }}
-              link={{ href: "/sparten/boule", text: "Mehr erfahren" }}
-            />
-            <Card
-              title="Tango Argentino"
-              description="Tanz, Haltung und musikalisches Gefühl."
-              image={{ src: "/images/tango.webp", alt: "Tango" }}
-              link={{ href: "/sparten/tango-argentino", text: "Mehr erfahren" }}
             />
           </div>
 
