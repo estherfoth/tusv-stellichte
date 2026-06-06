@@ -36,7 +36,13 @@ const Signatur = forwardRef<SignatureCanvas, SignaturProps>(
 
           <label>
             Datum
-            <input name={dateName} type="date" required={required} />
+            <input
+              name={dateName}
+              type="text"
+              placeholder="TT.MM.JJJJ"
+              pattern="\d{2}\.\d{2}\.\d{4}"
+              required={required}
+            />
           </label>
         </section>
 
