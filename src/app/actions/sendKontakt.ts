@@ -17,7 +17,7 @@ export type KontaktState = {
 
 export async function sendKontakt(
   _prevState: KontaktState,
-  formData: FormData
+  formData: FormData,
 ): Promise<KontaktState> {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
@@ -47,7 +47,7 @@ ${message}`,
     await resend.emails.send({
       from: "TuSV Stellichte <noreply@mail.tusv-stellichte.de>",
       to: email,
-      subject: "Ihre Anfrage beim TuSV Stellichte",
+      subject: "Ihre Kontaktanfrage beim TuSV Stellichte ist eingegangen",
       text: `Hallo ${name},
 
 vielen Dank für Ihre Nachricht! Wir haben Ihre Anfrage erhalten und melden uns so bald wie möglich bei Ihnen.
