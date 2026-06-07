@@ -1,6 +1,3 @@
-const MAPS_HEADER_HEIGHT = 60;
-const MAPS_FOOTER_HEIGHT = 12;
-
 type MapEmbedProps = {
   src: string;
   title?: string;
@@ -8,29 +5,19 @@ type MapEmbedProps = {
 
 export default function MapEmbed({
   src,
-  title = "Standort Karte",
+  title = "Streckenkarte",
 }: MapEmbedProps) {
   return (
-    <div
-      className="map-card"
-      style={{ overflow: "hidden", position: "relative" }}
-    >
-      <iframe
-        src={src}
-        className="map-embed"
-        allowFullScreen
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title={title}
-        style={{
-          position: "absolute",
-          top: -MAPS_HEADER_HEIGHT,
-          left: 0,
-          width: "100%",
-          height: `calc(100% + ${MAPS_HEADER_HEIGHT}px + ${MAPS_FOOTER_HEIGHT}px)`,
-          border: 0,
-        }}
-      />
-    </div>
+    <iframe
+      src={src}
+      title={title}
+      width="100%"
+      height="540"
+      frameBorder={0}
+      scrolling="no"
+      allowFullScreen
+      loading="lazy"
+      style={{ display: "block", border: 0 }}
+    />
   );
 }
