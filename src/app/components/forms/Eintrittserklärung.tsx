@@ -81,18 +81,24 @@ export default function EintrittserklärungsFormular() {
       email: String(formData.get("email") ?? ""),
 
       // Entry date
-      eintrittsdatum: parseGermanDate(String(formData.get("eintrittsdatum") ?? "")),
+      eintrittsdatum: parseGermanDate(
+        String(formData.get("eintrittsdatum") ?? ""),
+      ),
 
       // Member signature
       ort_mitglied: String(formData.get("ort_mitglied") ?? ""),
-      datum_mitglied: parseGermanDate(String(formData.get("datum_mitglied") ?? "")),
+      datum_mitglied: parseGermanDate(
+        String(formData.get("datum_mitglied") ?? ""),
+      ),
       signature_member: memberSigRef
         .current!.getTrimmedCanvas()
         .toDataURL("image/png"),
 
       // Parent/Guardian 1
       ort_vertreter_1: String(formData.get("ort_vertreter_1") ?? ""),
-      datum_vertreter_1: parseGermanDate(String(formData.get("datum_vertreter_1") ?? "")),
+      datum_vertreter_1: parseGermanDate(
+        String(formData.get("datum_vertreter_1") ?? ""),
+      ),
       signature_parent_1:
         parentSig1Ref.current && !parentSig1Ref.current.isEmpty()
           ? parentSig1Ref.current.getTrimmedCanvas().toDataURL("image/png")
@@ -100,7 +106,9 @@ export default function EintrittserklärungsFormular() {
 
       // Parent/Guardian 2
       ort_vertreter_2: String(formData.get("ort_vertreter_2") ?? ""),
-      datum_vertreter_2: parseGermanDate(String(formData.get("datum_vertreter_2") ?? "")),
+      datum_vertreter_2: parseGermanDate(
+        String(formData.get("datum_vertreter_2") ?? ""),
+      ),
       signature_parent_2:
         parentSig2Ref.current && !parentSig2Ref.current.isEmpty()
           ? parentSig2Ref.current.getTrimmedCanvas().toDataURL("image/png")
@@ -166,8 +174,7 @@ export default function EintrittserklärungsFormular() {
       </header>
       <p>
         Fußball - Tischtennis - Damen-, Herren- und Senioren-Gymnastik -
-        Mutter-Kind-Turnen - Badminton - Radfahren - Tango Argentino - Boule -
-        wechselnde Kursangebote
+        Mutter-Kind-Turnen - Tango Argentino - Boule - wechselnde Kursangebote
       </p>
       <p>
         Hiermit beantrage ich die Mitgliedschaft im{" "}

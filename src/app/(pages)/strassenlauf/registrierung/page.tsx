@@ -24,7 +24,7 @@ export default function RegistrierungPage() {
         variant="page"
         eyebrow="Anmeldung"
         title="Straßenlauf Registrierung"
-        description="Melden Sie sich jetzt für den Stellichter Straßenlauf 2025 an."
+        description="Melden Sie sich jetzt für den Stellichter Straßenlauf 2026 an."
       />
 
       <section className="section">
@@ -39,7 +39,7 @@ export default function RegistrierungPage() {
 
           {state.success && (
             <p style={{ color: "green" }}>
-              Anmeldung erfolgreich! Du erhältst eine Bestätigungsmail.
+              Anmeldung erfolgreich! Sie erhalten eine Bestätigungsmail.
             </p>
           )}
           {state.error && <p style={{ color: "red" }}>{state.error}</p>}

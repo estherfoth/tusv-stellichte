@@ -63,7 +63,7 @@ export default function StrassenlaufPage() {
         variant="page"
         eyebrow="Veranstaltung"
         title="Stellichter Straßenlauf"
-        description="39. Stellichter Straßenlauf 'Quer durch Stellichte' – Traditionslauf im August 2026."
+        description="40. Stellichter Straßenlauf 'Quer durch Stellichte' – Traditionslauf im August 2026."
       />
 
       <section className="section">
@@ -165,10 +165,6 @@ export default function StrassenlaufPage() {
               veröffentlicht.
             </p>
             <p style={{ marginTop: "12px" }}>
-              Sollten Sie damit nicht einverstanden sein, muss der Widerspruch
-              schriftlich erfolgen.
-            </p>
-            <p style={{ marginTop: "12px" }}>
               Vielen Dank für Ihr Verständnis.
             </p>
           </div>
@@ -186,7 +182,7 @@ export default function StrassenlaufPage() {
             </Link>
           </div>
 
-{/*           <div className="section-head" style={{ marginTop: "48px" }}>
+          {/*           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Eventbezogene Sponsoren</h2>
             <p>Unterstützer des Stellichter Straßenlaufs 2025.</p>
           </div>
