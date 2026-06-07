@@ -10,7 +10,7 @@ const allowedTopics = new Set([
   "allgemein",
   "mitgliedschaft",
   "training",
-  "hallenmiete",
+  // "hallenmiete",
 ]);
 
 export default async function Kontakt({ searchParams }: KontaktPageProps) {

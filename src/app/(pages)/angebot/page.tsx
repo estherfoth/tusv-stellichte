@@ -82,12 +82,6 @@ export default function AngebotPage() {
               image={{ src: "/images/tischtennis.png", alt: "Tischtennis" }}
               link={{ href: "/sparten/tischtennis", text: "Mehr erfahren" }}
             />
-            <Card
-              title="Badminton"
-              description="Spiel, Technik und Bewegung mit Schläger und Federball."
-              image={{ src: "/images/badminton.png", alt: "Badminton" }}
-              link={{ href: "/sparten/badminton", text: "Mehr erfahren" }}
-            />
           </div>
 
           {/* Fitness & Gymnastik */}
@@ -160,28 +154,8 @@ export default function AngebotPage() {
             />
           </div>
 
-          {/* Ausdauer & Outdoor */}
-          <div className="subsection-head">
-            <h3>Ausdauer & Outdoor</h3>
-            <p>Unterwegs in der Region und an der frischen Luft.</p>
-          </div>
-          <div className="card-grid card-grid--compact card-grid--outdoor">
-            <Card
-              title="Laufgruppe"
-              description="Gemeinsam laufen, neue Strecken entdecken."
-              image={{ src: "/images/laufgruppe.png", alt: "Laufgruppe" }}
-              link={{ href: "/sparten/laufgruppe", text: "Mehr erfahren" }}
-            />
-            <Card
-              title="Radfahren"
-              description="Gemeinsam radeln und die Umgebung erkunden."
-              image={{ src: "/images/radfahren.png", alt: "Radfahren" }}
-              link={{ href: "/sparten/radfahren", text: "Mehr erfahren" }}
-            />
-          </div>
-
           {/* Vereinsservice */}
-          <div className="subsection-head">
+          {/*           <div className="subsection-head">
             <h3>Vereinsservice</h3>
             <p>Zusätzliche Angebote rund um unsere Sportanlagen.</p>
           </div>
@@ -195,7 +169,7 @@ export default function AngebotPage() {
                 text: "Jetzt anfragen",
               }}
             />
-          </div>
+          </div> */}
         </div>
       </section>
     </main>

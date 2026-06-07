@@ -62,9 +62,9 @@ export default function NavBar() {
           >
             Mitglied werden
           </Link>
-          <Link href="/news" className={isActive("/news") ? "active" : ""}>
+          {/*           <Link href="/news" className={isActive("/news") ? "active" : ""}>
             Neuigkeiten
-          </Link>
+          </Link> */}
           <Link href="/kontakt" className="btn primary nav-cta">
             Kontakt
           </Link>

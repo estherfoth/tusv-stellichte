@@ -77,7 +77,7 @@ export default function Home() {
             variant: "ghost",
           },
         ]}
-        gallery={[
+        /*         gallery={[
           // Fußball
           [
             {
@@ -132,11 +132,11 @@ export default function Home() {
               caption: "So, 07.09.2025 | Fulde | 14:00 Uhr",
             },
           ],
-        ]}
+        ]}*/
       />
 
       {/* News Section */}
-      <section className="section news-section">
+      {/*   <section className="section news-section">
         <div className="container">
           <div className="hero-card hero-card--news">
             <div className="hero-card-inner">
@@ -148,198 +148,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Straßenlauf Anmeldung */}
-      <section className="section alt" id="strassenlauf-anmeldung">
-        <div className="container">
-          <div className="section-head">
-            <div>
-              <p className="eyebrow">Straßenlauf 2025</p>
-              <h2>Anmeldung zum Straßenlauf 2025</h2>
-              <p>
-                Melden Sie sich hier für den Straßenlauf an. Das Formular dient
-                aktuell als Platzhalter.
-              </p>
-            </div>
-          </div>
-          <div
-            className="race-route-grid"
-            aria-label="Straßenlauf Streckenkarten"
-          >
-            {strassenlaufRouten.map((route) => (
-              <article className="race-route-card" key={route.name}>
-                <MapEmbed src={route.embedSrc} title={route.name} />
-                <div className="race-route-content">
-                  <h3>{route.name}</h3>
-                  <a
-                    href={route.mapsUrl}
-                    className="card-external"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    In Google Maps öffnen
-                  </a>
-                </div>
-              </article>
-            ))}
-          </div>
-          <div className="card" style={{ marginBottom: "20px" }}>
-            <h3>Eckdaten zum Straßenlauf</h3>
-            <div className="table-wrap">
-              <table className="race-table">
-                <thead>
-                  <tr>
-                    <th>Bereich</th>
-                    <th>Information</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {strassenlaufInfos.map(([bereich, info]) => (
-                    <tr key={bereich}>
-                      <td>{bereich}</td>
-                      <td>{info}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p style={{ marginTop: "14px" }}>
-              Mit Ihrer verbindlichen Anmeldung stimmen Sie zu, dass Daten sowie
-              fotografische Aufnahmen in Print- und Digital-Medien sowie auf der
-              Homepage des TuSV Stellichte veröffentlicht werden können. Ein
-              schriftlicher Widerspruch ist möglich.
-            </p>
-          </div>
-          <div className="card" style={{ marginBottom: "24px" }}>
-            <h3>Disziplinen und Distanzen</h3>
-            <div className="table-wrap">
-              <table className="race-table">
-                <thead>
-                  <tr>
-                    <th>Disziplin</th>
-                    <th>Startzeit</th>
-                    <th>Strecke</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {strassenlaufDisziplinen.map(
-                    ([disziplin, startzeit, strecke]) => (
-                      <tr key={disziplin}>
-                        <td>{disziplin}</td>
-                        <td>{startzeit}</td>
-                        <td>{strecke}</td>
-                      </tr>
-                    ),
-                  )}
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="section-head" style={{ marginTop: "24px" }}>
-            <h3>Eventbezogene Sponsoren</h3>
-            <p>Diese Partner unterstützen gezielt den Straßenlauf 2025.</p>
-          </div>
-          <SponsorGrid sponsors={strassenlaufEventSponsors} />
-          <form className="contact-form race-form" action="#" method="post">
-            <label>
-              Vor- und Nachname *
-              <input type="text" name="name" autoComplete="name" required />
-            </label>
-            <label>
-              Straße, Nr.
-              <input type="text" name="street" autoComplete="street-address" />
-            </label>
-            <label>
-              Postleitzahl
-              <input type="text" name="postalCode" autoComplete="postal-code" />
-            </label>
-            <label>
-              Wohnort *
-              <input
-                type="text"
-                name="city"
-                autoComplete="address-level2"
-                required
-              />
-            </label>
-            <label>
-              Geschlecht *
-              <select name="gender" required defaultValue="">
-                <option value="">-</option>
-                <option value="weiblich">Weiblich</option>
-                <option value="maennlich">Männlich</option>
-                <option value="divers">Divers</option>
-              </select>
-            </label>
-            <label>
-              Jahrgang *
-              <input
-                type="number"
-                name="birthyear"
-                min="1900"
-                max="2025"
-                required
-              />
-            </label>
-            <label>
-              Verein
-              <input type="text" name="club" autoComplete="organization" />
-            </label>
-            <label>
-              Ihre E-Mail-Adresse
-              <input type="email" name="email" autoComplete="email" required />
-            </label>
-            <label>
-              Telefon
-              <input type="tel" name="phone" autoComplete="tel" />
-            </label>
-            <label>
-              Gewünschte Laufstrecke *
-              <select name="distance" required defaultValue="">
-                <option value="">-</option>
-                <option value="walk-5km">
-                  1. Walken (ohne Zeitnahme) - 10:00 Uhr - 5,0 km
-                </option>
-                <option value="kinder-2020-juenger">
-                  2. Laufen - Kinder Jg. 2020 u. jünger - 10:10 Uhr - 0,4 km
-                </option>
-                <option value="kinder-2016-2019">
-                  3. Laufen - Kinder Jg. 2016 bis 2019 - 10:20 Uhr - 1,2 km
-                </option>
-                <option value="kinder-2012-2015">
-                  4. Laufen - Kinder Jg. 2012 bis 2015 - 10:25 Uhr - 2,0 km
-                </option>
-                <option value="erwachsene-35km">
-                  5. Laufen - Erwachsene - 11:00 Uhr - 3,5 km
-                </option>
-                <option value="erwachsene-50km">
-                  6. Laufen - Erwachsene - 11:00 Uhr - 5,0 km
-                </option>
-                <option value="erwachsene-100km">
-                  7. Laufen - Erwachsene - 11:00 Uhr - 10,0 km
-                </option>
-              </select>
-            </label>
-            <label>
-              Nachricht
-              <textarea name="message" rows={8} />
-            </label>
-            <label className="consent">
-              <input type="checkbox" name="consent" required />
-              Ich willige ein, dass meine Angaben zur Anmeldung gespeichert und
-              verarbeitet werden. *
-            </label>
-            <p className="form-note">
-              Pflichtfelder sind mit * gekennzeichnet. Details in der{" "}
-              <Link href="/datenschutz">Datenschutzerklärung</Link>.
-            </p>
-            <button className="btn primary" type="submit">
-              Anmeldung abschicken
-            </button>
-          </form>
-        </div>
-      </section>
+      </section> */}
 
       {/* Map Section */}
       <section className="section map-section" id="anfahrt">
@@ -356,7 +165,7 @@ export default function Home() {
       </section>
 
       {/* Sponsors Section */}
-      <section className="section alt sponsors-section" id="sponsoren">
+      {/*    <section className="section alt sponsors-section" id="sponsoren">
         <div className="container">
           <div className="section-head">
             <h2>Besondere Sponsoren</h2>
@@ -364,7 +173,7 @@ export default function Home() {
           </div>
           <SponsorGrid sponsors={sponsors} />
         </div>
-      </section>
+        </section> */}
     </main>
   );
 }
