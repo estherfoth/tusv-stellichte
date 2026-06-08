@@ -1,49 +1,42 @@
 import Hero from "@/app/components/ui/Hero";
 import Link from "next/link";
 
-export default function YogaPage() {
+export default function TanzenPage() {
   return (
     <main>
       <Hero
         variant="page"
-        eyebrow="Kurse"
-        title="Yoga"
-        description="Atmung, Beweglichkeit und Entspannung im Einklang – für Körper und Geist."
+        eyebrow="Tanzen"
+        title="Tanzen"
+        description="Tango Argentino als eigene Sparte – elegant, lebendig und gemeinschaftlich."
       />
 
       <section className="section">
         <div className="container">
           <div className="section-head">
-            <h2>Was erwartet dich?</h2>
+            <h2>Tango Argentino beim TuSV</h2>
             <p className="section-body">
-              Praktiziert wird Hatha Yoga, ein ruhigerer Stil, bei dem das
-              Gleichgewicht zwischen Körper und Geist durch körperliche Übungen,
-              die bewusst gehalten werden (Asanas), und durch Atemübungen
-              angestrebt wird. Ziele sind, die Gesundheit, Kraft und
-              Gelenkigkeit des Körpers zu verbessern, den Gleichgewichtssinn und
-              die Muskeln zu stärken und das Lungenvolumen und damit die
-              Vitalität zu erhöhen.
+              Zur wunderschönen Tangomusik tanzen hier Paare mit Grund- und
+              erweiterten Kenntnissen. Ohne einen professionellen Tanzkursleiter
+              werden neue Schrittkombinationen per YouTube gelernt. Einmal im
+              Jahr wird zusammen nach Bremen in einen der Tangosalons gefahren.
             </p>
           </div>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Kurszeiten:</h2>
+            <h2>Trainingszeiten</h2>
           </div>
-          <p className="section-body">
-            Montag 18.00 bis 19.00 Uhr & Mittwoch 9.30 bis 11.00 Uhr
-          </p>
+          <p className="section-body">Sonntag 15.30 - 17.00 Uhr</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
-            <h2>Kursleitung:</h2>
+            <h2>Ansprechperson</h2>
           </div>
-          <p className="section-body">
-            Anke Janowicz (Montag) & Luzia Limberg (Mittwoch)
-          </p>
+          <p className="section-body">Kerstin Pütting-Behrens</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Wo?</h2>
           </div>
-          <p className="section-body">Gymnastikraum</p>
+          <p className="section-body">Gymnastikraum (mit Spiegelwand)</p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
             <h2>Mitmachen?</h2>
@@ -54,11 +47,13 @@ export default function YogaPage() {
             Informationen.
             <br />
             <br />
-            Bettina Engel: <a href="tel:+4951681256">05168/1256</a>
+            Kerstin Pütting-Behrens:{" "}
+            <a href="tel:+495168918096">05168/918096</a>
           </p>
+
           <div className="hero-actions" style={{ marginTop: "24px" }}>
             <Link href="/trainingszeiten" className="btn primary">
-              Kurszeiten ansehen
+              Trainingszeiten ansehen
             </Link>
             <Link href="/kontakt" className="btn ghost">
               Kontakt aufnehmen
