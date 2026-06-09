@@ -10,6 +10,7 @@ export default function EintrittserklärungsFormular() {
   const memberSigRef = useRef<SignatureCanvas | null>(null);
   const parentSig1Ref = useRef<SignatureCanvas | null>(null);
   const parentSig2Ref = useRef<SignatureCanvas | null>(null);
+  const sepaSigRef = useRef<SignatureCanvas | null>(null);
 
   const [signatureError, setSignatureError] = useState(false);
   const [birthDate, setBirthDate] = useState<string>("");
@@ -18,9 +19,19 @@ export default function EintrittserklärungsFormular() {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
+  function parseGermanDate(dateStr: string): string {
+    const parts = dateStr.split(".");
+    if (parts.length !== 3) return dateStr;
+    const [day, month, year] = parts;
+    return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+  }
+
   const isAdult = (() => {
     if (!birthDate) return false;
-    const dob = new Date(birthDate);
+    const parts = birthDate.split(".");
+    if (parts.length !== 3) return false;
+    const [day, month, year] = parts;
+    const dob = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
     const today = new Date();
     let age = today.getFullYear() - dob.getFullYear();
     const m = today.getMonth() - dob.getMonth();
@@ -64,24 +75,30 @@ export default function EintrittserklärungsFormular() {
       hausnummer: String(formData.get("hausnummer") ?? ""),
       plz: String(formData.get("plz") ?? ""),
       ort: String(formData.get("ort") ?? ""),
-      geburtsdatum: birthDate,
+      geburtsdatum: parseGermanDate(birthDate),
       sparte: String(formData.get("sparte") ?? ""),
       telefonnummer: String(formData.get("telefonnummer") ?? ""),
       email: String(formData.get("email") ?? ""),
 
       // Entry date
-      eintrittsdatum: String(formData.get("eintrittsdatum") ?? ""),
+      eintrittsdatum: parseGermanDate(
+        String(formData.get("eintrittsdatum") ?? ""),
+      ),
 
       // Member signature
       ort_mitglied: String(formData.get("ort_mitglied") ?? ""),
-      datum_mitglied: String(formData.get("datum_mitglied") ?? ""),
+      datum_mitglied: parseGermanDate(
+        String(formData.get("datum_mitglied") ?? ""),
+      ),
       signature_member: memberSigRef
         .current!.getTrimmedCanvas()
         .toDataURL("image/png"),
 
       // Parent/Guardian 1
       ort_vertreter_1: String(formData.get("ort_vertreter_1") ?? ""),
-      datum_vertreter_1: String(formData.get("datum_vertreter_1") ?? ""),
+      datum_vertreter_1: parseGermanDate(
+        String(formData.get("datum_vertreter_1") ?? ""),
+      ),
       signature_parent_1:
         parentSig1Ref.current && !parentSig1Ref.current.isEmpty()
           ? parentSig1Ref.current.getTrimmedCanvas().toDataURL("image/png")
@@ -89,10 +106,24 @@ export default function EintrittserklärungsFormular() {
 
       // Parent/Guardian 2
       ort_vertreter_2: String(formData.get("ort_vertreter_2") ?? ""),
-      datum_vertreter_2: String(formData.get("datum_vertreter_2") ?? ""),
+      datum_vertreter_2: parseGermanDate(
+        String(formData.get("datum_vertreter_2") ?? ""),
+      ),
       signature_parent_2:
         parentSig2Ref.current && !parentSig2Ref.current.isEmpty()
           ? parentSig2Ref.current.getTrimmedCanvas().toDataURL("image/png")
+          : null,
+
+      // Sepa-Lastschriftmandat
+      kontoinhaber: String(formData.get("kontoinhaber") ?? ""),
+      iban_suffix: String(formData.get("iban_suffix") ?? ""),
+      bic: String(formData.get("bic") ?? ""),
+      bank: String(formData.get("bank") ?? ""),
+      ort_sepa: String(formData.get("ort_sepa") ?? ""),
+      datum_sepa: parseGermanDate(String(formData.get("datum_sepa") ?? "")),
+      signature_sepa:
+        sepaSigRef.current && !sepaSigRef.current.isEmpty()
+          ? sepaSigRef.current.getTrimmedCanvas().toDataURL("image/png")
           : null,
     };
 
@@ -143,8 +174,7 @@ export default function EintrittserklärungsFormular() {
       </header>
       <p>
         Fußball - Tischtennis - Damen-, Herren- und Senioren-Gymnastik -
-        Mutter-Kind-Turnen - Badminton - Radfahren - Tanzen - Boule -
-        wechselnde Kursangebote
+        Mutter-Kind-Turnen - Tango Argentino - Boule - wechselnde Kursangebote
       </p>
       <p>
         Hiermit beantrage ich die Mitgliedschaft im{" "}
@@ -155,8 +185,10 @@ export default function EintrittserklärungsFormular() {
         <input
           className={styles.eintrittsInput}
           name="eintrittsdatum"
-          type="date"
-          lang="de-DE"
+          type="text"
+          placeholder="TT.MM.JJJJ"
+          pattern="\d{2}\.\d{2}\.\d{4}"
+          required
         />
       </p>
       <fieldset>
@@ -242,11 +274,16 @@ export default function EintrittserklärungsFormular() {
         <input
           className={styles.eintrittsInput}
           name="plz"
-          type="number"
+          type="text"
           required
         ></input>
         <span>, </span>
-        <input className={styles.eintrittsInput} name="ort" type="text"></input>
+        <input
+          className={styles.eintrittsInput}
+          name="ort"
+          type="text"
+          required
+        ></input>
         <br />
         <label className={styles.eintrittsLabel} htmlFor="geburtsdatum">
           Geburtsdatum
@@ -254,8 +291,9 @@ export default function EintrittserklärungsFormular() {
         <input
           className={styles.eintrittsInput}
           name="geburtsdatum"
-          type="date"
-          lang="de-DE"
+          type="text"
+          placeholder="TT.MM.JJJJ"
+          pattern="\d{2}\.\d{2}\.\d{4}"
           required
           value={birthDate}
           onChange={(e) => setBirthDate(e.target.value)}
@@ -371,6 +409,68 @@ export default function EintrittserklärungsFormular() {
           mindestens ein gesetzlicher Vertreter.
         </p>
       )}
+
+      <br />
+
+      <p>
+        Hiermit ermächtige ich Sie widerruflich, den von mir zu zahlenden
+        Jahresbeitrag an den TuSV Stellichte e.V. bei Fälligkeit zu Lasten
+        meines Girokontos mittels Lastschrift einzuziehen.
+      </p>
+      <fieldset>
+        <legend>SEPA-Basis-Lastschriftmandat</legend>
+        <label className={styles.eintrittsLabel} htmlFor="kontoinhaber">
+          Kontoinhaber:
+        </label>
+        <input
+          className={styles.eintrittsInput}
+          name="kontoinhaber"
+          type="text"
+          required
+        ></input>
+        <br />
+        <label className={styles.eintrittsLabel} htmlFor="iban_suffix">
+          IBAN:
+        </label>
+        <span style={{ marginLeft: "1rem" }}>DE</span>
+        <input
+          className={styles.eintrittsInput}
+          name="iban_suffix"
+          type="text"
+          required
+        ></input>
+        <br />
+        <label className={styles.eintrittsLabel} htmlFor="bic">
+          BIC:
+        </label>
+        <input
+          className={styles.eintrittsInput}
+          name="bic"
+          type="text"
+          required={false}
+        ></input>
+        <label className={styles.eintrittsLabel} htmlFor="bank">
+          Bank:
+        </label>
+        <input
+          className={styles.eintrittsInput}
+          name="bank"
+          type="text"
+          required
+        ></input>
+        <section className={styles.sepaSignatures}>
+          <Signatur
+            ref={sepaSigRef}
+            legend="Ort, Datum und Unterschrift (Kontoinhaber)"
+            placeName="ort_sepa"
+            dateName="datum_sepa"
+            required
+            clearLabel="Unterschrift löschen"
+            onClear={() => sepaSigRef.current?.clear()}
+          />
+        </section>
+      </fieldset>
+
       {submitError && (
         <div role="alert" className={styles.errorMessage}>
           <strong>Fehler beim Absenden</strong>
