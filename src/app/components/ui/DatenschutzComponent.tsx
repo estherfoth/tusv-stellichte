@@ -252,7 +252,7 @@ export default function DatenschutzComponent() {
         die Server-Log-Files erfasst werden.
       </p>
 
-      <h3>Kontaktformular und Beitrittserklärung</h3>
+      <h3>Kontaktformular, Beitrittserklärung und Straßenlauf-Anmeldung</h3>
       <p>
         Wenn Sie uns per Kontaktformular oder über unsere Beitrittserklärung Anfragen oder Daten zukommen lassen, werden Ihre
         Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage
@@ -269,6 +269,17 @@ export default function DatenschutzComponent() {
         Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre
         Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener
         Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
+      </p>
+      <p>
+        Für die Online-Anmeldung zum Stellichter Straßenlauf erheben wir folgende Daten: Vor- und Nachname, Wohnort (Straße,
+        PLZ, Ort), Geschlecht, Jahrgang, Verein, E-Mail-Adresse, Telefonnummer, gewählte Laufstrecke sowie eine optionale
+        Nachricht. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw.
+        vorvertragliche Maßnahmen) zur Durchführung der Veranstaltung. Die Daten werden in unserer Datenbank (Supabase)
+        gespeichert und per E-Mail (Resend) weitergeleitet. Eine Bestätigungsmail wird an die angegebene E-Mail-Adresse versandt.
+        Die Daten werden nach Abschluss der Veranstaltung und Ablauf etwaiger gesetzlicher Aufbewahrungsfristen gelöscht.
+      </p>
+      <p>
+        Der E-Mail-Versand für Kontaktformular und Straßenlauf-Anmeldung erfolgt über den Dienstleister Resend (siehe Abschnitt 4).
       </p>
 
       <h2>4. Externe Dienste und Drittanbieter</h2>
@@ -367,6 +378,53 @@ export default function DatenschutzComponent() {
         </a>
       </p>
 
+      <h3>Resend (E-Mail-Versand)</h3>
+      <p>
+        Zum Versand von E-Mails über das Kontaktformular und die Straßenlauf-Anmeldung nutzen wir den Dienst Resend.
+        Anbieter ist Resend Inc., 2261 Market Street #4990, San Francisco, CA 94114, USA.
+      </p>
+      <p>
+        Wenn Sie ein Formular auf unserer Website absenden, werden die eingegebenen Daten zur Übermittlung der entsprechenden
+        E-Mail an Resend weitergeleitet. Resend verarbeitet diese Daten ausschließlich zur Zustellung der E-Mails in unserem Auftrag.
+        Es kann eine Datenübertragung in die USA stattfinden. Resend unterliegt dem EU-U.S. Data Privacy Framework.
+      </p>
+      <p>
+        Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) bzw. Art. 6 Abs. 1 lit. f
+        DSGVO (berechtigtes Interesse an der sicheren und zuverlässigen E-Mail-Kommunikation).
+      </p>
+      <p>
+        Weitere Informationen finden Sie in der Datenschutzerklärung von Resend:{" "}
+        <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+          https://resend.com/legal/privacy-policy
+        </a>
+      </p>
+
+      <h3>Komoot (Streckenkarten)</h3>
+      <p>
+        Auf unserer Straßenlauf-Seite binden wir Streckenkarten des Dienstes Komoot ein. Anbieter ist die
+        Komoot GmbH, Am Borsigturm 58, 13507 Berlin, Deutschland.
+      </p>
+      <p>
+        Beim Aufruf einer Seite mit eingebetteter Komoot-Karte wird eine Verbindung zu den Servern von Komoot hergestellt.
+        Dabei können folgende Daten übermittelt werden:
+      </p>
+      <ul>
+        <li>IP-Adresse</li>
+        <li>Datum und Uhrzeit des Abrufs</li>
+        <li>Browser-Informationen</li>
+        <li>Referrer URL</li>
+      </ul>
+      <p>
+        Die Einbindung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes
+        Interesse an der anschaulichen Darstellung der Laufstrecken.
+      </p>
+      <p>
+        Weitere Informationen finden Sie in der Datenschutzerklärung von Komoot:{" "}
+        <a href="https://www.komoot.com/privacy" target="_blank" rel="noopener noreferrer">
+          https://www.komoot.com/privacy
+        </a>
+      </p>
+
       <h2>5. Plugins und Tools</h2>
 
       <h3>Google Web Fonts</h3>
@@ -395,7 +453,7 @@ export default function DatenschutzComponent() {
       </p>
 
       <p style={{ marginTop: "2rem", fontSize: "0.9rem", color: "#666" }}>
-        Stand: Februar 2026
+        Stand: Juni 2026
       </p>
     </section>
   );

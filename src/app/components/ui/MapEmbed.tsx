@@ -17,6 +17,7 @@ export default function MapEmbed({
       scrolling="no"
       allowFullScreen
       loading="lazy"
+      referrerPolicy="no-referrer"
       style={{ display: "block", border: 0 }}
     />
   );
