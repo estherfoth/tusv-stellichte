@@ -8,7 +8,7 @@ export default function TanzenPage() {
         variant="page"
         eyebrow="Tanzen"
         title="Tanzen"
-        description="Tango Argentino als eigene Sparte – elegant, lebendig und gemeinschaftlich."
+        description="Eleganz, Nähe und Improvisation – der klassische Paartanz aus Buenos Aires."
       />
 
       <section className="section">
