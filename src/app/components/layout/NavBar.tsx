@@ -29,7 +29,7 @@ export default function NavBar() {
             className="brand-mark"
             priority
           />
-          <span className="brand-text">Hier trifft sich die Nachbarschaft</span>
+          <span className="brand-text">Hier trifft man sich.</span>
         </Link>
         <button
           className="nav-toggle"

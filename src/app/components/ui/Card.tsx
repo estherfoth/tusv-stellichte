@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 
 type CardProps = {
   variant?: "default" | "course" | "kinderturnen";
+  linkClassName?: string;
   title: string;
   description?: string;
   image?: {
@@ -26,6 +27,7 @@ type CardProps = {
 
 export default function Card({
   variant = "default",
+  linkClassName,
   title,
   description,
   image,
@@ -74,7 +76,7 @@ export default function Card({
         href={link.href}
         className={`card-link ${
           variant === "kinderturnen" ? "card-link--kinderturnen" : ""
-        }`}
+        } ${linkClassName || ""}`.trim()}
         {...(link.external && { target: "_blank", rel: "noreferrer" })}
       >
         {cardContent}

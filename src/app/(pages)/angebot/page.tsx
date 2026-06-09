@@ -1,6 +1,5 @@
 import Hero from "@/app/components/ui/Hero";
 import Card from "@/app/components/ui/Card";
-import Link from "next/link";
 
 export default function AngebotPage() {
   return (
@@ -23,8 +22,7 @@ export default function AngebotPage() {
           <div className="subsection-head">
             <h3>Kurse</h3>
             <p>
-              Yoga, Energy Dance, Tango Argentino und Pilates als feste
-              Kursangebote.
+              Yoga, Energy Dance und TriloCHi als feste Kursangebote.
             </p>
           </div>
           <div className="card-grid">
@@ -47,20 +45,28 @@ export default function AngebotPage() {
             />
             <Card
               variant="course"
-              title="Tango Argentino"
-              description="Eleganz, Nähe und Improvisation – der klassische Paartanz aus Buenos Aires."
-              image={{
-                src: "/images/step_aerobic.png",
-                alt: "Tango Argentino Kurs",
-              }}
-              link={{ href: "/kurse/tango-argentino", text: "Mehr erfahren" }}
-            />
-            <Card
-              variant="course"
               title="TriloCHi®"
               description="Eine harmonische Kombination aus Yoga, Tai Chi und Qigong für mehr Ruhe und Vitalität."
               image={{ src: "/images/bauch-beine-po.png", alt: "Pilates Kurs" }}
               link={{ href: "/kurse/trilo-chi", text: "Mehr erfahren" }}
+            />
+          </div>
+
+          {/* Tanzen */}
+          <div className="subsection-head">
+            <h3>Tanzen</h3>
+            <p>Tango Argentino als eigene Sparte mit regelmäßigen Treffen.</p>
+          </div>
+          <div className="card-grid card-grid--tight card-grid--compact">
+            <Card
+              title="Tango Argentino"
+              linkClassName="card-link--half"
+              description="Eleganz, Nähe und Improvisation – der klassische Paartanz aus Buenos Aires."
+              image={{
+                src: "/images/step_aerobic.png",
+                alt: "Tango Argentino",
+              }}
+              link={{ href: "/sparten/tanzen", text: "Mehr erfahren" }}
             />
           </div>
 
