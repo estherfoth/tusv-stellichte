@@ -5,16 +5,16 @@ import { Resend } from "resend";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SECRET_KEY!
+  process.env.SUPABASE_SECRET_KEY!,
 );
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const DISTANCE_LABELS: Record<string, string> = {
   "walk-5km": "Walken (ohne Zeitnahme) – 10:00 Uhr – 5,0 km",
-  "kinder-2020-juenger": "Kinder Jg. 2020 u. jünger – 10:10 Uhr – 0,4 km",
-  "kinder-2016-2019": "Kinder Jg. 2016 bis 2019 – 10:20 Uhr – 1,2 km",
-  "kinder-2012-2015": "Kinder Jg. 2012 bis 2015 – 10:25 Uhr – 2,0 km",
+  "kinder-2021-juenger": "Kinder Jg. 2021 u. jünger – 10:10 Uhr – 0,4 km",
+  "kinder-2017-2020": "Kinder Jg. 2017 bis 2020 – 10:20 Uhr – 1,2 km",
+  "kinder-2013-2016": "Kinder Jg. 2013 bis 2016 – 10:25 Uhr – 2,0 km",
   "erwachsene-3,5km": "Erwachsene – 11:00 Uhr – 3,5 km",
   "erwachsene-5km": "Erwachsene – 11:00 Uhr – 5,0 km",
   "erwachsene-10km": "Erwachsene – 11:00 Uhr – 10,0 km",
@@ -27,7 +27,7 @@ export type RegisterRaceState = {
 
 export async function registerRace(
   _prevState: RegisterRaceState,
-  formData: FormData
+  formData: FormData,
 ): Promise<RegisterRaceState> {
   const name = formData.get("name") as string;
   const street = formData.get("street") as string;
@@ -59,7 +59,10 @@ export async function registerRace(
 
   if (dbError) {
     console.error("Supabase error:", dbError);
-    return { success: false, error: "Datenbankfehler. Bitte versuche es erneut." };
+    return {
+      success: false,
+      error: "Datenbankfehler. Bitte versuche es erneut.",
+    };
   }
 
   const distanceLabel = DISTANCE_LABELS[distance] ?? distance;

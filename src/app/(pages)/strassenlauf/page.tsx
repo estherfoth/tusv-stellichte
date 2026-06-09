@@ -17,31 +17,31 @@ const veranstaltungsdaten = [
 
 const strassenlaufRouten = [
   {
-    name: "Straßenlauf - 1200 m",
+    name: "3. Laufen: Kinder Jg. 2021 und jünger - 1200 m",
     komootSrc:
       "https://www.komoot.com/tour/1769594506/embed?share_token=aMVbSVpz04mGw3zrPmVgPwfuj5E2kTfynB2JrGH7As03F2XuZB&layout=map",
     komootUrl: "https://www.komoot.com/tour/1769594506",
   },
   {
-    name: "Straßenlauf - 2000 m",
+    name: "4. Laufen: Kinder Jg. 2017 bis 2020 - 2000 m",
     komootSrc:
       "https://www.komoot.com/tour/1769623358/embed?share_token=a9U6tFlHhYqzVUtUTYLAaRSZGI8zLPhvT85njINhzSqV4Q0Z5n&layout=map",
     komootUrl: "https://www.komoot.com/tour/1769623358",
   },
   {
-    name: "Straßenlauf - 3500 m",
+    name: "5. Laufen: Erwachsene - 3500 m",
     komootSrc:
       "https://www.komoot.com/tour/1600863302/embed?share_token=aXwby3GZ2tP3HoNSdzc5i23Uzks2oMGJY6VJjocHqNG5Wm8muM&layout=map",
     komootUrl: "https://www.komoot.com/tour/1600863302",
   },
   {
-    name: "Straßenlauf - 5000 m",
+    name: "6. Laufen: Erwachsene - 5000 m",
     komootSrc:
       "https://www.komoot.com/tour/1600830704/embed?share_token=aMPGy4i2ZbPvu48RolshuX8QUtGAVl77GDwIcBmFgamcwOlKVn&layout=map",
     komootUrl: "https://www.komoot.com/tour/1600830704",
   },
   {
-    name: "Straßenlauf - 10.000 m",
+    name: "7. Laufen: Erwachsene - 10.000 m",
     komootSrc:
       "https://www.komoot.com/tour/1600785912/embed?share_token=aUpP8fHk65PIXIlS0TeFZ1AI9novcUlMgK0Kr1bl5JeGhTjW6D&layout=map",
     komootUrl: "https://www.komoot.com/tour/1600785912",
@@ -49,9 +49,13 @@ const strassenlaufRouten = [
 ];
 
 const strassenlaufDisziplinen = [
-  ["Walken", "ab 10:00 Uhr", "ca. 7 km"],
-  ["Kinderläufe (jahrgangsabhängig)", "vormittags", "ca. 0,4 km bis 2 km"],
-  ["Erwachsenenläufe", "ab 11:00 Uhr", "ca. 3,5 km bis 10 km"],
+  ["1. Walken: Ohne Zeitnahme", "Start: 10:00 Uhr", "5 km"],
+  ["2. Laufen: Kinder Jg. 2021 und jünger", "Sart: 10:10 Uhr", "0,4 km"],
+  ["3. Laufen: Kinder Jg. 2017 bis 2020", "Start: 10:20 Uhr", "1,2 km"],
+  ["4. Laufen: Kinder Jg. 2013 bis 2016", "Start: 10:25 Uhr", "2 km"],
+  ["5. Laufen: Erwachsene", "Start: 11:00 Uhr", "3,5 km"],
+  ["6. Laufen: Erwachsene", "Start: 11:00 Uhr", "5 km"],
+  ["7. Laufen: Erwachsene", "Start: 11:00 Uhr", "10 km"],
 ];
 
 const strassenlaufEventSponsors = getEventSponsors("strassenlauf-2025");

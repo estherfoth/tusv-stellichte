@@ -47,6 +47,12 @@ export default function NavBar() {
           >
             Angebote
           </Link>
+          <Link
+            href="/strassenlauf"
+            className={isActive("/strassenlauf") ? "active" : ""}
+          >
+            Straßenlauf
+          </Link>
           <Link href="/verein" className={isActive("/verein") ? "active" : ""}>
             Vorstandsmitglieder
           </Link>

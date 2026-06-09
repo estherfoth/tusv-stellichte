@@ -5,50 +5,6 @@ import MapEmbed from "./components/ui/MapEmbed";
 import Link from "next/link";
 import { newsSlides } from "@/data/news";
 import { sponsors } from "@/data/sponsors";
-import { getEventSponsors } from "@/data/eventSponsors";
-
-const strassenlaufRouten = [
-  {
-    name: "Straßenlauf - 3500 m",
-    embedSrc:
-      "https://www.google.com/maps/d/embed?mid=1CnYuHQcZOswOEqd8cDw44eZMDee4Szg&ehbc=2E312F&noprof=1",
-    mapsUrl:
-      "https://www.google.com/maps/d/edit?mid=1CnYuHQcZOswOEqd8cDw44eZMDee4Szg&usp=sharing",
-  },
-  {
-    name: "Straßenlauf - 5000 m",
-    embedSrc:
-      "https://www.google.com/maps/d/embed?mid=13RbupbezGCR1Bl5PIBFuprnlOL1dDmE&ehbc=2E312F&noprof=1",
-    mapsUrl:
-      "https://www.google.com/maps/d/edit?mid=13RbupbezGCR1Bl5PIBFuprnlOL1dDmE&usp=sharing",
-  },
-  {
-    name: "Straßenlauf - 10.000 m",
-    embedSrc:
-      "https://www.google.com/maps/d/embed?mid=1Hb9_pgauBuS-N90KGo5don4iHKTN0js&ehbc=2E312F&noprof=1",
-    mapsUrl:
-      "https://www.google.com/maps/d/edit?mid=1Hb9_pgauBuS-N90KGo5don4iHKTN0js&usp=sharing",
-  },
-];
-
-const strassenlaufInfos = [
-  ["Veranstaltung", "Stellichter Straßenlauf 2025"],
-  ["Datum", "Sonntag, 17.08.2025"],
-  ["Start und Ziel", "Sportplatz Stellichte"],
-  [
-    "Anmeldung",
-    "Für 10-km-Lauf per Internet. Für Walken und weitere Läufe per Internet oder am Veranstaltungstag am Sportplatz.",
-  ],
-  ["Siegerehrung", "ca. 12:30 Uhr"],
-];
-
-const strassenlaufDisziplinen = [
-  ["Walken", "ab 10:00 Uhr", "ca. 7 km"],
-  ["Kinderläufe (jahrgangsabhängig)", "vormittags", "ca. 1 km bis 2 km"],
-  ["Erwachsenenläufe", "ab 11:00 Uhr", "ca. 3,5 km bis 10 km"],
-];
-
-const strassenlaufEventSponsors = getEventSponsors("strassenlauf-2025");
 
 export default function Home() {
   return (
@@ -68,7 +24,7 @@ export default function Home() {
         buttons={[
           {
             text: "Jetzt Mitglied werden",
-            href: "/kontakt#kontaktformular",
+            href: "/mitglied",
             variant: "primary",
           },
           {
@@ -149,6 +105,31 @@ export default function Home() {
           </div>
         </div>
       </section> */}
+
+      {/* Straßenlauf Section */}
+      <section className="section" id="strassenlauf">
+        <div className="container">
+          <div className="section-head">
+            <h2>Straßenlauf 2026</h2>
+          </div>
+          <div className="section-body">
+            Auch dieses Jahr findet am <strong>Sonntag, 16. August 2026</strong>{" "}
+            wieder einmal der Stellichter Straßenlauf statt!
+            <br />
+            Dieses Jahr geht es für die Läuferinnen und Läufer zum 40. Mal an
+            den Start.
+          </div>
+          <br />
+          <div className="hero-actions">
+            <Link href="/strassenlauf/registrierung" className="btn primary">
+              Zur Anmeldung
+            </Link>
+            <Link href="/strassenlauf" className="btn ghost">
+              Mehr erfahren
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Map Section */}
       <section className="section map-section" id="anfahrt">

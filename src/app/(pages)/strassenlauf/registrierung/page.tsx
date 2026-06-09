@@ -104,14 +104,14 @@ export default function RegistrierungPage() {
                 <option value="walk-5km">
                   1. Walken (ohne Zeitnahme) - 10:00 Uhr - 5,0 km
                 </option>
-                <option value="kinder-2020-juenger">
-                  2. Laufen - Kinder Jg. 2020 u. jünger - 10:10 Uhr - 0,4 km
+                <option value="kinder-2021-juenger">
+                  2. Laufen - Kinder Jg. 2021 u. jünger - 10:10 Uhr - 0,4 km
                 </option>
-                <option value="kinder-2016-2019">
-                  3. Laufen - Kinder Jg. 2016 bis 2019 - 10:20 Uhr - 1,2 km
+                <option value="kinder-2017-2020">
+                  3. Laufen - Kinder Jg. 2017 bis 2020 - 10:20 Uhr - 1,2 km
                 </option>
-                <option value="kinder-2012-2015">
-                  4. Laufen - Kinder Jg. 2012 bis 2015 - 10:25 Uhr - 2,0 km
+                <option value="kinder-2013-2016">
+                  4. Laufen - Kinder Jg. 2013 bis 2016 - 10:25 Uhr - 2,0 km
                 </option>
                 <option value="erwachsene-3,5km">
                   5. Laufen - Erwachsene - 11:00 Uhr - 3,5 km
