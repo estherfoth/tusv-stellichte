@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   title: "TuSV Stellichte e.V.",
   description:
     "TuSV Stellichte e.V. – Sportverein mit Fußball, Tischtennis, Fitness und mehr. Mitmachen, trainieren, Gemeinschaft erleben.",
+  openGraph: {
+    images: ["/images/openGraphLogo.png"],
+  },
 };
 
 export default function RootLayout({

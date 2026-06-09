@@ -173,8 +173,9 @@ export default function EintrittserklärungsFormular() {
         </h1>
       </header>
       <p>
-        Fußball - Tischtennis - Damen-, Herren- und Senioren-Gymnastik -
-        Mutter-Kind-Turnen - Tango Argentino - Boule - wechselnde Kursangebote
+        Fußball - Tischtennis - Badminton - Damen-, Herren- und
+        Senioren-Gymnastik - Mutter-Kind-Turnen - Tango Argentino - Boule -
+        wechselnde Kursangebote
       </p>
       <p>
         Hiermit beantrage ich die Mitgliedschaft im{" "}
