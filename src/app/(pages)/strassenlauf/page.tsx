@@ -17,13 +17,13 @@ const veranstaltungsdaten = [
 
 const strassenlaufRouten = [
   {
-    name: "3. Laufen: Kinder Jg. 2021 und jünger - 1200 m",
+    name: "3. Laufen: Kinder Jg. 2017 und 2020 - 1200 m",
     komootSrc:
       "https://www.komoot.com/tour/1769594506/embed?share_token=aMVbSVpz04mGw3zrPmVgPwfuj5E2kTfynB2JrGH7As03F2XuZB&layout=map",
     komootUrl: "https://www.komoot.com/tour/1769594506",
   },
   {
-    name: "4. Laufen: Kinder Jg. 2017 bis 2020 - 2000 m",
+    name: "4. Laufen: Kinder Jg. 2013 bis 2016 - 2000 m",
     komootSrc:
       "https://www.komoot.com/tour/1769623358/embed?share_token=a9U6tFlHhYqzVUtUTYLAaRSZGI8zLPhvT85njINhzSqV4Q0Z5n&layout=map",
     komootUrl: "https://www.komoot.com/tour/1769623358",
