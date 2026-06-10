@@ -114,7 +114,7 @@ export default function Home() {
           </div>
           <div className="section-body">
             Auch dieses Jahr findet am <strong>Sonntag, 16. August 2026</strong>{" "}
-            wieder einmal der Stellichter Straßenlauf statt!
+            wieder der Stellichter Straßenlauf statt!
             <br />
             Dieses Jahr geht es für die Läuferinnen und Läufer zum 40. Mal an
             den Start.
