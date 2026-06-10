@@ -733,6 +733,14 @@ img {
   gap: 4px;
 }
 
+.card-grid--ballsport {
+  width: 60%;
+}
+
+.card-grid--kids {
+  width: 60%;
+}
+
 .card-grid--outdoor {
   column-gap: 0;
 }
@@ -842,6 +850,11 @@ img {
 
 .card-link--half .card {
   width: 100%;
+}
+
+.card-grid--ballsport .card-link--half {
+  width: 100%;
+  max-width: none;
 }
 
 .card-link .card {
@@ -1395,6 +1408,14 @@ img {
 
   .race-route-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card-grid--ballsport {
+    width: 100%;
+  }
+
+  .card-grid--kids {
+    width: 100%;
   }
 }
 
