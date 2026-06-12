@@ -38,7 +38,7 @@ export default function AngebotPage() {
               title="ENERGY DANCE®"
               description="Power, Rhythmus und Spaß mit energiegeladenen Moves."
               image={{
-                src: "/images/step_aerobic.png",
+                src: "/images/energy-dance.png",
                 alt: "Energy Dance Kurs",
               }}
               link={{ href: "/kurse/energy-dance", text: "Mehr erfahren" }}
@@ -55,7 +55,7 @@ export default function AngebotPage() {
           {/* Tanzen */}
           <div className="subsection-head">
             <h3>Tanzen</h3>
-            <p>Tango Argentino als eigene Sparte mit regelmäßigen Treffen.</p>
+            <p>Rhythmus, Ausdruck und gemeinsame Freude an der Bewegung.</p>
           </div>
           <div className="card-grid card-grid--tight card-grid--compact">
             <Card
@@ -63,7 +63,7 @@ export default function AngebotPage() {
               linkClassName="card-link--half"
               description="Eleganz, Nähe und Improvisation – der klassische Paartanz aus Buenos Aires."
               image={{
-                src: "/images/step_aerobic.png",
+                src: "/images/tango.webp",
                 alt: "Tango Argentino",
               }}
               link={{ href: "/sparten/tanzen", text: "Mehr erfahren" }}
@@ -75,15 +75,17 @@ export default function AngebotPage() {
             <h3>Ballsport</h3>
             <p>Teamsport und schnelle Duelle.</p>
           </div>
-          <div className="card-grid card-grid--tight card-grid--compact">
+          <div className="card-grid card-grid--compact card-grid--ballsport">
             <Card
               title="Fußball"
+              linkClassName="card-link--half"
               description="Herren-, Jugend- und Freizeitteams mit Trainingsbetrieb."
               image={{ src: "/images/fussballer.png", alt: "Fußball" }}
               link={{ href: "/sparten/fussball", text: "Mehr erfahren" }}
             />
             <Card
               title="Tischtennis"
+              linkClassName="card-link--half"
               description="Ambitioniertes Training und offene Spielzeiten."
               image={{ src: "/images/tischtennis.png", alt: "Tischtennis" }}
               link={{ href: "/sparten/tischtennis", text: "Mehr erfahren" }}
@@ -139,7 +141,7 @@ export default function AngebotPage() {
             <h3>Kinder & Jugend</h3>
             <p>Bewegung und Spaß von Anfang an.</p>
           </div>
-          <div className="card-grid card-grid--compact card-grid--outdoor">
+          <div className="card-grid card-grid--compact card-grid--kids">
             <Card
               title="Kinderturnen"
               description="Turnen, Klettern und Koordination für Kinder."
