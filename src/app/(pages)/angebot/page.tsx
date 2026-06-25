@@ -94,7 +94,7 @@ export default function AngebotPage() {
             <Card
               title="Badminton"
               linkClassName="card-link--half"
-              description="Ambitioniertes Training und offene Spielzeiten."
+              description="Ohne Trainer von und miteinander lernen."
               image={{
                 src: "/images/badminton_unsplash.jpg",
                 alt: "Badminton",
