@@ -44,34 +44,46 @@ export default function NavBar() {
           <Link
             href="/angebot"
             className={isActive("/angebot") ? "active" : ""}
+            onClick={() => setIsOpen(false)}
           >
             Angebote
           </Link>
           <Link
             href="/strassenlauf"
             className={isActive("/strassenlauf") ? "active" : ""}
+            onClick={() => setIsOpen(false)}
           >
             Straßenlauf
           </Link>
-          <Link href="/verein" className={isActive("/verein") ? "active" : ""}>
+          <Link
+            href="/verein"
+            className={isActive("/verein") ? "active" : ""}
+            onClick={() => setIsOpen(false)}
+          >
             Vorstandsmitglieder
           </Link>
           <Link
             href="/satzung"
             className={isActive("/satzung") ? "active" : ""}
+            onClick={() => setIsOpen(false)}
           >
             Satzung
           </Link>
           <Link
             href="/mitglied"
             className={isActive("/mitglied") ? "active" : ""}
+            onClick={() => setIsOpen(false)}
           >
             Mitglied werden
           </Link>
           {/*           <Link href="/news" className={isActive("/news") ? "active" : ""}>
             Neuigkeiten
           </Link> */}
-          <Link href="/kontakt" className="btn primary nav-cta">
+          <Link
+            href="/kontakt"
+            className="btn primary nav-cta"
+            onClick={() => setIsOpen(false)}
+          >
             Kontakt
           </Link>
         </nav>
