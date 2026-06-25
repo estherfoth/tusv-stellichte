@@ -21,16 +21,14 @@ export default function AngebotPage() {
           {/* Kurse */}
           <div className="subsection-head">
             <h3>Kurse</h3>
-            <p>
-              Yoga, Energy Dance und TriloCHi als feste Kursangebote.
-            </p>
+            <p>Yoga, Energy Dance und TriloCHi als feste Kursangebote.</p>
           </div>
           <div className="card-grid">
             <Card
               variant="course"
               title="Yoga"
               description="Atmung, Beweglichkeit und Entspannung im Einklang."
-              image={{ src: "/images/fitness.png", alt: "Yoga Kurs" }}
+              image={{ src: "/images/yoga_unsplash.jpg", alt: "Yoga Kurs" }}
               link={{ href: "/kurse/yoga", text: "Mehr erfahren" }}
             />
             <Card
@@ -80,15 +78,28 @@ export default function AngebotPage() {
               title="Fußball"
               linkClassName="card-link--half"
               description="Herren-, Jugend- und Freizeitteams mit Trainingsbetrieb."
-              image={{ src: "/images/fussballer.png", alt: "Fußball" }}
+              image={{ src: "/images/fussball_unsplash.jpg", alt: "Fußball" }}
               link={{ href: "/sparten/fussball", text: "Mehr erfahren" }}
             />
             <Card
               title="Tischtennis"
               linkClassName="card-link--half"
               description="Ambitioniertes Training und offene Spielzeiten."
-              image={{ src: "/images/tischtennis.png", alt: "Tischtennis" }}
+              image={{
+                src: "/images/tischtennis_unsplash.jpg",
+                alt: "Tischtennis",
+              }}
               link={{ href: "/sparten/tischtennis", text: "Mehr erfahren" }}
+            />
+            <Card
+              title="Badminton"
+              linkClassName="card-link--half"
+              description="Ambitioniertes Training und offene Spielzeiten."
+              image={{
+                src: "/images/badminton_unsplash.jpg",
+                alt: "Badminton",
+              }}
+              link={{ href: "/sparten/badminton", text: "Mehr erfahren" }}
             />
           </div>
 
