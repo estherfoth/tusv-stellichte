@@ -29,8 +29,8 @@ export default function FussballPage() {
             <h2>Trainingszeiten:</h2>
           </div>
           <p className="section-body">
-            Aktuell donnerstags ab 19.00 Uhr (ggfs. nach Absprache über
-            WhattsApp)
+            Aktuell donnerstags ab 19.00 Uhr (ggf. nach Absprache über
+            WhatsApp)
           </p>
 
           <div className="section-head" style={{ marginTop: "48px" }}>
@@ -55,7 +55,7 @@ export default function FussballPage() {
             Informationen.
             <br />
             <br />
-            Hartwig Lüjens: <a href="tel:+49516872468">
+            Hartwig Lütjens: <a href="tel:+49516872468">
               05168/72468
             </a> &amp; <a href="tel:+491623230719">0162 3230719</a>
           </p>
