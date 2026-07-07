@@ -55,8 +55,8 @@ export default function FussballPage() {
             Informationen.
             <br />
             <br />
-            Hartwig Lütjens: <a href="tel:+49516872468">
-              05168/72468
+            Hartwig Lütjens: <a href="tel:+49516172468">
+              05161 72468
             </a> &amp; <a href="tel:+491623230719">0162 3230719</a>
           </p>
           <div className="hero-actions" style={{ marginTop: "24px" }}>
